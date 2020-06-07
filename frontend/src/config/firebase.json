@@ -1,0 +1,9 @@
+{
+  "apiKey": "AIzaSyAcVBfY3wjgXz_XCVMTn5pCUkdPmXaJx-Y",
+  "authDomain": "gotradeup.firebaseapp.com",
+  "databaseURL": "https://gotradeup.firebaseio.com",
+  "projectId": "gotradeup",
+  "storageBucket": "gotradeup.appspot.com",
+  "messagingSenderId": "1051431223545",
+  "appId": "1:1051431223545:web:a477eece4e99f53e7da228"
+}
