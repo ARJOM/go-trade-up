@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../assets/logo.png';
 import './styles.css'
 
-export default function Dashboard(container){
+export default function Dashboard(props){
     return(
         <div className="container">
 
@@ -30,10 +30,9 @@ export default function Dashboard(container){
             </div>
         </nav>
         </div>
-        <div className="body">
-   
-        <p>Aqui você chama o container par ao dashboard</p>
 
+        <div className="body">
+               {props.children}
         </div>
         </div>
 
