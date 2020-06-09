@@ -12,8 +12,6 @@ module.exports ={
             })
             .catch(err=>console.log({procedimento: 'Listar Usuários', Status: 'Erro ao tentar Listar', Error: err}))
             
-            console.log('Enviando: ', user)
-
             return res.json(`Usuário criado com sucesso!`)
         
     },
