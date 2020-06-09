@@ -1,7 +1,9 @@
 const express = require('express');
 
+const UserRouter = require('./routes/UserRoutes')
+
 const routes = express.Router();
 
-routes.get('/', (req, res, next) => res.send('Hello World'));
+routes.use(UserRouter);
 
 module.exports = routes;

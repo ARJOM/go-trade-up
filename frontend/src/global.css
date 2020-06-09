@@ -1,0 +1,24 @@
+a:link{ 
+ text-decoration:none; 
+} 
+button{
+    border-radius: 7px;
+    padding: 1%;
+    width: 180px;
+    font-size: 1.2em;
+    width: 20%;
+}
+button:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.btn-cancel{
+    border: none;
+    background-color: #FABC3C;
+}
+.btn-concluir{
+    border: none;
+    background-color: #789D0D;
+}

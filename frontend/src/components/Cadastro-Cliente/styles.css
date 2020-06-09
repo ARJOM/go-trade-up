@@ -1,0 +1,52 @@
+.clientContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.form{
+    height: 80vh;
+}
+.form form{
+    display: flex;
+    flex-direction: column;
+    width:100vh;
+    margin-top: 13vh;
+    height: 80%;
+    justify-content: space-between;
+}
+.inputs{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputs input{
+    width: 90%;
+}
+.form form input{
+    margin-top: 5vh;
+    padding: 10px;
+    background-color: white;
+    border-radius: 7px;
+    border: none;
+    text-align: center;
+}
+button{
+    padding: 0.7em;
+    width: 35%;
+}
+.btn-cadastro{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

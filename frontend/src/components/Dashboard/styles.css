@@ -1,0 +1,68 @@
+*{
+    background-color: #CCDBDC;
+}
+.div{
+    background-color: #003E72;
+    margin-top: 8.5vh;
+}
+.container{
+    background-color: #003E72;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 15vh;
+    left: 200px;
+    background-color: #003E72;
+    overflow: hidden;
+}
+.logo{
+    position: relative;
+    top: 0.5em;
+    left: 0.5em;
+    background-color: #003E72;
+}
+hr{
+    border:0.5px solid black;
+    width: 99%;
+}
+.menu{
+    width:15vw;
+    background-color: #003E72;
+    height: 100vh;
+    min-height: 87vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 68px; 
+}
+a{
+    color: black;
+    font-size: 1.3em;
+    font-weight: 700;
+    background-color: #003E72;
+}
+
+a:hover{
+    color: white;
+    background-color: #0059A2;
+    padding: 20px;
+    width: 100%;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    width: 84.7%;
+    margin-left: 15vw;
+    overflow: hidden;
+    background-color: #CCDBDC;
+    margin-top: 5vh;
+    overflow: hidden;
+}

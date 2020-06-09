@@ -1,7 +1,14 @@
 import React from 'react';
+import Dashboard from './components/Dashboard';
+import CadastroCliente from './components/Cadastro-Cliente';
+import './global.css'
 
 export default function App() {
   return (
-    <h1>Olá mundo</h1>
-  );
+    <div>
+    <Dashboard>
+      <CadastroCliente />
+    </Dashboard>
+    </div>
+    );
 }
