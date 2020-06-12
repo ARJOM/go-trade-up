@@ -4,21 +4,30 @@ module.exports ={
     async create(req, res){
         const {email, user_name, password, phone, uf, city, address } = req.body;
 
-        const user = await connection('users').insert({
-            email,
-            user_name,
-            password
-        }).catch(err=>console.log({procedimento: 'Criar Usuários', Status: 'Erro ao tentar criar', Error: err}));
+        const user = { email, user_name, password };
 
-        const market = await connection('markets').insert({
-            email,
-            phone,
-            uf,
-            city,
-            address
-        }).catch(err=>console.log({procedimento: 'Criar Comércio', Status: 'Erro ao tentar criar', Error: err}));
+        const market = { email, phone, uf, city, address };
 
-        return res.json(`Mercado criado com sucesso!`)
+        // Cria usuário
+        await connection('users').insert(user)
+            .then(async () =>{
+                // Se bem sucedido cria comércio
+                await connection('markets').insert(market)
+                    .then(() => {
+                        // Se bem sucedido retorna uma mensagem
+                        return res.json(`Mercado criado com sucesso!`);
+                    })
+                    .catch( async (err) => {
+                        // Se falhar remove usuário criado
+                        await connection('users').where('email', email).del();
+                        return res.json({procedimento: 'Criar Comércio', Status: 'Erro ao tentar criar', Error: err}, 400);
+                    });
+                }
+            )
+            // Se falhar exibe mensagem de erro
+            .catch(err=> {
+                return res.json({procedimento: 'Criar Comércio', Status: 'Erro ao tentar criar', Error: err}, 400);
+            });
     },
 
     async index(req, res){
