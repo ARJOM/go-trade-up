@@ -4,7 +4,7 @@ import './style.css';
 
 export default function CadastroComerciante(){
 
-    const [name, setName] = useState();
+    const [nome, setName] = useState();
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
     const [estado, setEstado] = useState();
@@ -14,7 +14,7 @@ export default function CadastroComerciante(){
 
     async function handleSubmit(){
         const data = {
-            user_name: name,
+            user_name: nome,
             email: email,
             password: senha,
             state: estado,
@@ -41,43 +41,43 @@ export default function CadastroComerciante(){
             <section className="form">
                 <form type="submit">
                     <section class="inputs">
-                        <label for="fNome">
-                            Altere seu nome: 
-                            <input type="text" placeholder="Nome" value={name} onChange={text=>setName(text.target.value)}></input>    
+                        <label for="Nome">
+                            Nome: 
+                            <input type="text" placeholder="Nome" value={nome} onChange={text=>setName(text.target.value)}></input>    
                         </label>
 
-                        <label for="fEmail">
-                            Altere seu e-mail:
+                        <label for="Email">
+                            Email:
                             <input type="text" placeholder="E-mail" value={email} onChange={text=>setEmail(text.target.value)} ></input>    
                         </label>
 
-                        <label for="fSenha">
-                            Altere sua senha:
+                        <label for="Senha">
+                            Senha:
                             <input type="text" placeholder="Senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>    
                         </label>
 
-                        <label for="fEstado">
-                            Altere seu Estado: 
+                        <label for="Estado">
+                            Estado: 
                             <input type="text" placeholder="Estado" value={estado} onChange={text=>setEstado(text.target.value)}></input>    
                         </label>
 
-                        <label for="fCidade">
-                            Altere sua cidade: 
+                        <label for="Cidade">
+                            Cidade: 
                             <input type="text" placeholder="Cidade" value={cidade} onChange={text=>setCidade(text.target.value)}></input>    
                         </label>
                         
-                        <label for="fEndereco">
-                            Altere seu endereco: 
+                        <label for="Endereco">
+                            Endereco: 
                             <input type="text" placeholder="Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}></input>    
                         </label>
 
-                        <label for="fTelefone">
-                            Altere seu telefone: 
+                        <label for="Telefone">
+                            Telefone para contato: 
                             <input type="text" placeholder="Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}></input>    
                         </label>
 
                     </section>
-                    <input type="submit" value="Salvar Alteracoes"></input>
+                    <input type="submit" value="Cadastrar"></input>
 
                     <section class="buttons">
                         <button className="button-cancel">
@@ -85,7 +85,7 @@ export default function CadastroComerciante(){
                         </button>
 
                         <button onClick={handleSubmit} className="button-concluir">
-                            Concluir cadastro
+                            Concluir Cadastro
                         </button>
                     </section>        
                 </form>
