@@ -1,8 +1,8 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable('donations', function(table){
-        table.increments('id').primary('donations_pk');
-        table.string('decription').notNullable();
+        table.string('id').primary('donations_pk');
+        table.string('description').notNullable();
         table.float('value').notNullable();
  
     })

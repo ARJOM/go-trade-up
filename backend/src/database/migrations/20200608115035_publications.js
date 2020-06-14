@@ -1,9 +1,9 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable('publications', function(table){
-        table.increments ('id').primary('publication_pk');
+        table.string ('id').primary('publication_pk');
         table.string('description').notNullable();
-        table.date('publication_date').notNullable();
+        table.string('publication_date').notNullable();
   
     })
 };
