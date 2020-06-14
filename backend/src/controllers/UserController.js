@@ -52,6 +52,15 @@ module.exports ={
 
     },
 
+    async delete(req, res){
+        const { email } = req.params;
+
+        await connection('users').where('email', email).del()
+            .then(() => res.json("Usuário removido com sucesso"))
+            .catch(err => res.json({procedimento: 'Remover Usuário', Status: 'Erro ao tentar Remover', Error: err}, 400));
+
+    },
+
     async index(req, res){
 
         const users = await connection('users').select('*')
