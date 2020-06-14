@@ -6,6 +6,7 @@ const routes = express.Router();
 
 routes.get('/users', UserController.index);
 routes.post('/users', UserController.create);
-routes.put('/users', UserController.update);
+routes.put('/users/:email', UserController.update);
+routes.get('/users/:email', UserController.read);
 
 module.exports = routes;

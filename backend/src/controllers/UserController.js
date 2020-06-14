@@ -6,15 +6,12 @@ module.exports ={
         const {email, user_name, password } = req.body;
 
             const exist = await connection('users').where('email', email).select('email').first();
-            
 
             if(exist){
-                if(exist.email == email){
+                if(exist.email === email){
                     return res.json("Email já cadastrado! ")
                 }
             }
-           
-
 
             const user = await connection('users').insert({
                 email,
@@ -25,12 +22,13 @@ module.exports ={
               return res.json({procedimento: 'Criar Usuários', Status: 'Erro ao tentar criar', Error: err}, 400);
             });
 
-            return res.json(`Usuário criado com sucesso!`)
+            return res.json(`Usuário criado com sucesso!`);
 
     },
 
     async update(req, res){
-        const {email, user_name, password } = req.body;
+        const { email } = req.params;
+        const { user_name, password } = req.body;
 
         const user = await connection('users')
             .where({email: email})
@@ -45,11 +43,19 @@ module.exports ={
         return res.json('Usuário atualizado com sucesso');
     },
 
+    async read(req, res){
+        const { email } = req.params;
+
+        await connection('users').where('email', email).select('*').first()
+            .then(user => res.send(user))
+            .catch(err => res.send({procedimento: 'Ler Usuário', Status: 'Erro ao tentar Ler', Error: err}, 400));
+
+    },
+
     async index(req, res){
 
         const users = await connection('users').select('*')
-        .catch(err=>res.json({procedimento: 'Listar Usuários', Status: 'Erro ao tentar Listar', Error: err}))
+        .catch(err=>res.json({procedimento: 'Listar Usuários', Status: 'Erro ao tentar Listar', Error: err}, 400));
         return res.json(users)
-
     }
-}
+};
