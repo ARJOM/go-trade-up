@@ -30,12 +30,58 @@ module.exports ={
             });
     },
 
+    async update(req, res){
+        const { email } = req.params;
+        const { user_name, password, phone, uf, city, address } = req.body;
+
+        const user = { user_name, password };
+
+        const market = { phone, uf, city, address };
+
+        await connection('users')
+            .where({email: email})
+            .update({user})
+            .then(async () => {
+                await connection('markets')
+                    .where({email: email})
+                    .update({market})
+                    .then(() => res.json("Comerciante atualizado com sucesso!"))
+                    .catch(err => res.json({procedimento: "Editar comerciante", Status: "Falha parcial", Erro: err}, 400))
+            })
+            .catch(err=>{
+                return res.json({procedimento: 'Editar comerciante', Status: 'Erro ao tentar atualizar', Error: err}, 400);
+            });
+    },
+
+    async read(req, res){
+        const { email } = req.params;
+
+        await connection('markets')
+            .join('users', 'users.email', 'markets.email')
+            .where('email', email).select('*').first()
+            .then(market => res.json(market))
+            .catch(err => res.send({procedimento: 'Ler comerciante', Status: 'Erro ao tentar Ler', Error: err}, 400));
+
+    },
+
+    async delete(req, res){
+        const { email } = req.params;
+
+        await connection('markets').where('email', email).del()
+            .then( async () => {
+                await connection('users').where('email', email).del()
+                .then(() => res.json("Comerciante removido com sucesso"))
+            })
+            .catch(err => res.json({procedimento: 'Remover Usuário', Status: 'Erro ao tentar Remover', Error: err}, 400));
+
+    },
+
     async index(req, res){
 
         const users = await connection('markets')
             .join('users', 'users.email', 'markets.email')
             .select('*')
-            .catch(err=>console.log({procedimento: 'Listar Comércios', Status: 'Erro ao tentar Listar', Error: err}));
+            .catch(err=>res.json({procedimento: 'Listar Comércios', Status: 'Erro ao tentar Listar', Error: err}));
 
         return res.json(users);
     }
