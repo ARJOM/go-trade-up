@@ -25,7 +25,7 @@ export default function CadastroCliente(){
     }
 
     return(
-        <div className="clientContainer">
+        <div className="top">
             <section className="title">
                 <h1>Cadastrar-se como Cliente</h1>
             </section>
