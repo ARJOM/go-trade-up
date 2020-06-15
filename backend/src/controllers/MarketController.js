@@ -60,7 +60,7 @@ module.exports ={
             .join('users', 'users.email', 'markets.email')
             .where('email', email).select('*').first()
             .then(market => res.json(market))
-            .catch(err => res.send({procedimento: 'Ler comerciante', Status: 'Erro ao tentar Ler', Error: err}, 400));
+            .catch(err => res.json({procedimento: 'Ler comerciante', Status: 'Erro ao tentar Ler', Error: err}, 400));
 
     },
 
