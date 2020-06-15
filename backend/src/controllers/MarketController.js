@@ -40,11 +40,11 @@ module.exports ={
 
         await connection('users')
             .where({email: email})
-            .update({user})
+            .update(user)
             .then(async () => {
                 await connection('markets')
                     .where({email: email})
-                    .update({market})
+                    .update(market)
                     .then(() => res.json("Comerciante atualizado com sucesso!"))
                     .catch(err => res.json({procedimento: "Editar comerciante", Status: "Falha parcial", Erro: err}, 400))
             })
@@ -58,7 +58,7 @@ module.exports ={
 
         await connection('markets')
             .join('users', 'users.email', 'markets.email')
-            .where('email', email).select('*').first()
+            .where('users.email', email).select('*').first()
             .then(market => res.json(market))
             .catch(err => res.json({procedimento: 'Ler comerciante', Status: 'Erro ao tentar Ler', Error: err}, 400));
 
