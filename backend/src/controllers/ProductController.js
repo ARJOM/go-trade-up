@@ -1,10 +1,13 @@
 const connection = require('../database/Connection');
+const Indentifier = require('../services/Identifier');
 
 module.exports= {
     async create(req, res) {
         const { market, product_name, price, photo, description } = req.body;
 
-        const product = { market, product_name, price, photo, description };
+        const id = Indentifier.newId();
+
+        const product = { id, market, product_name, price, photo, description };
 
         await connection('products').insert(product)
             .then(() => res.json('Produto cadastrado'))
@@ -12,13 +15,13 @@ module.exports= {
     },
 
     async update(req, res) {
-        const { market } = req.params;
+        const { id } = req.params;
         const { product_name, price, photo, description } = req.body;
 
         const product = { product_name, price, photo, description };
 
         await connection('products')
-            .where({market: market})
+            .where({id: id})
             .update({product})
             .then(() => res.json("Produto atualizado com sucesso!"))
             .catch(err => res.json({procedimento: "Editar produto", Status: "Falha parcial", Erro: err}, 400));
@@ -26,18 +29,18 @@ module.exports= {
     },
 
     async read(req, res) {
-        const { market, product_name } = req.params;
+        const { id } = req.params;
 
-        await connection('products').where({market, product_name}).select('*').first()
+        await connection('products').where({id: id}).select('*').first()
             .then(product => res.json(product))
             .catch(err => res.json({procedimento: 'Ler produto', Status: 'Erro ao tentar Ler', Error: err}, 400));
 
     },
 
     async delete(req, res) {
-        const { market, product_name } = req.params;
+        const { id } = req.params;
 
-        await connection('products').where({market, product_name}).del()
+        await connection('products').where({id: id}).del()
             .then(() => res.json("Produto removido com sucesso"))
             .catch(err => res.json({procedimento: 'Remover produto', Status: 'Erro ao tentar Remover', Error: err}, 400));
     },
