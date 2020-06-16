@@ -1,4 +1,5 @@
 const connection = require('../database/Connection');
+const PasswordEncrypt = require('../services/PasswordEncrypt');
 
 module.exports ={
 
@@ -16,7 +17,7 @@ module.exports ={
             const user = await connection('users').insert({
                 email,
                 user_name,
-                password
+                password: PasswordEncrypt.passwordEncrypt(password)
             })
             .catch(err=>{
               return res.json({procedimento: 'Criar Usuários', Status: 'Erro ao tentar criar', Error: err}, 400);
@@ -34,7 +35,7 @@ module.exports ={
             .where({email: email})
             .update({
                 user_name,
-                password
+                password: PasswordEncrypt.passwordEncrypt(password)
             })
             .catch(err=>{
               return res.json({procedimento: 'Atualizar Usuários', Status: 'Erro ao tentar atualizar', Error: err}, 400);

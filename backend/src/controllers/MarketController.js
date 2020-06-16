@@ -1,10 +1,11 @@
 const connection = require('../database/Connection');
+const PasswordEncrypt = require('../services/PasswordEncrypt');
 
 module.exports ={
     async create(req, res){
         const {email, user_name, password, phone, uf, city, address } = req.body;
 
-        const user = { email, user_name, password };
+        const user = { email, user_name, password: PasswordEncrypt.passwordEncrypt(password) };
 
         const market = { email, phone, uf, city, address };
 
@@ -34,7 +35,7 @@ module.exports ={
         const { email } = req.params;
         const { user_name, password, phone, uf, city, address } = req.body;
 
-        const user = { user_name, password };
+        const user = { user_name, password: PasswordEncrypt.passwordEncrypt(password) };
 
         const market = { phone, uf, city, address };
 
