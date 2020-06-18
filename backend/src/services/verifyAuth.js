@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const SECRET = require('../config/SecretJwt');
 
 
-function verifyJWT(req, res, next){
+module.exports = function verifyJWT(req, res, next){
     const token = req.headers['x-access-token'];
 
     if (!token) return res.status(401).json({ auth: false, message: 'Token não enviado.' });
@@ -13,4 +13,4 @@ function verifyJWT(req, res, next){
         req.user_email = decoded.id;
         next();
     });
-}
+};
