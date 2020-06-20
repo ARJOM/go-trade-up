@@ -14,42 +14,42 @@ export default function userEdit(){
     
     return (
         <div>
-            <div className="editTop">
+            <div className="top">
                 <section className="title">
                     <h1> Editar Dados - Cliente </h1>
                 </section>
             </div>
 
-            <section className="editUserForm">
+            <section className="form">
                 <form>
                     <section className="inputs">
-                        <label for="Novo Nome">
+                        <label for="Novo nome">
                             Altere seu nome:
-                            <input type="text" placeholder="Novo Nome" value={nome} onChange={text=>setNome(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Novo nome" value={nome} onChange={text=>setNome(text.target.value)}></input>
                         </label>
 
-                        <label for="Novo Email">
+                        <label for="Novo e-mail">
                             Altere seu e-mail:
-                            <input type="text" placeholder="Novo E-mail" value={email} onChange={text=>setEmail(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Novo e-mail" value={email} onChange={text=>setEmail(text.target.value)}></input>
                         </label>
 
-                        <label for="Nova Senha">
+                        <label for="Nova senha">
                             Altere sua senha:
-                            <input type="text" placeholder="Nova Senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Nova senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
                         </label>
                     </section>
                     <input type="submit" value="Editar Dados"></input>
 
-                    <section>
-                        <button className="cancelarEdit">
+                    <section className="buttons">
+                        <button className="btn-cancel">
                             Cancelar
                         </button>
 
-                        <button className="exlcuirUser">
+                        <button className="btn-excluir">
                             Excluir Usuario
                         </button>
                         
-                        <button onClick={handleSubmit} className="saveEdit">
+                        <button onClick={handleSubmit} className="btn-concluir">
                             Salvar Alteracoes
                         </button>
 

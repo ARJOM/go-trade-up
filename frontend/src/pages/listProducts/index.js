@@ -19,7 +19,7 @@ export default function listUProducts(){
                 <p><darker>Título:</darker>//render content//.</p>
                 <p><darker>Descrição:</darker>//render content//.</p>
 
-                <button><a href=""><p>Entre em contato</p></a></button>
+                <button className="btn-contact"><a href=""><p>Entre em contato</p></a></button>
 
                 <p><darker>Preço:</darker>//render content//.</p>
                 

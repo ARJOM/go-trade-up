@@ -34,17 +34,17 @@ export default function CadastroCliente(){
                 <form type="submit">
                     <section className="inputs">
 
-                    <input type="text" placeholder="Nome" value={name}
+                    <input type="text" className="nbreak" className="req" placeholder="Nome" value={name}
                     onChange={text=>setName(text.target.value)} />
 
-                    <input type="text" placeholder="Email" value={email}
+                    <input type="text" className="break" className="req" placeholder="Email" value={email}
                     onChange={text=>setEmail(text.target.value)} />
 
-                    <input type="password" placeholder="Senha" value={senha}
+                    <input type="password" className="break" className="req" placeholder="Senha" value={senha}
                     onChange={text=>setSenha(text.target.value)} />
                     </section>
 
-                    <section className="btn-cadastro">
+                    <section className="buttons">
                         <button className="btn-cancel">Cancelar</button>
             
                         <button onClick={handleSubmit} className="btn-concluir">Concluir</button>

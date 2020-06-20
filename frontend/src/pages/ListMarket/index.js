@@ -21,9 +21,9 @@ export default function listMarket(){
             </section>
             
             <section className="buttons">
-                <button> <a href=""> Ver Produtos </a> </button>
+                <button className="btn-listprd"> <a href=""> Ver Produtos </a> </button>
 
-                <button> <a href=""> Entrar em Contato </a> </button>
+                <button className="btn-contact"> <a href=""> Entrar em Contato </a> </button>
             </section>
         </div>
     )

@@ -13,13 +13,13 @@ export default function pubTransparencia(){
     
     return (
         <div>
-            <div className="pubTop">
+            <div className="top">
                 <section className="title">
                     <h1> Nova Publicacao de Transparencia </h1>
                 </section>
             </div>
 
-            <section className="pubForm">
+            <section className="form">
                 <form>
                     <section className="inputs">
                         <label for="Foto">
@@ -29,18 +29,18 @@ export default function pubTransparencia(){
 
                         <label for="Descricao">
                             Descreva sua doacao:
-                            <input type="text" placeholder="Descricao" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Descricao" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
                         </label>
                     </section>
 
                     <input type="submit" value="Publicar"></input>
 
-                    <section>
-                        <button className="cancelarPub">
+                    <section className="buttons">
+                        <button className="btn-cancel">
                             Cancelar
                         </button>
                         
-                        <button onClick={handleSubmit} className="Pub">
+                        <button onClick={handleSubmit} className="btn-concluir">
                             Publicar
                         </button>
 
