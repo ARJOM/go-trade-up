@@ -9,18 +9,18 @@ export default function CadastroCliente(){
     const [senha, setSenha] = useState();
     
 
-    async function handleSubmit(){
+    async function handleSubmit(e){
+        e.preventDefault();
+
         const data = {
             user_name: name,
             email: email,
             password: senha
         }
-        try{
-            const response = await api.post('users', data);
-            alert(`Cadastrado com sucesso!`);
-        }catch(err){
-            alert('Erro no cadastro, tente novamente! ERRO:   ', err)
-        }
+
+        const response = await api.post('users', data);
+            console.log('RESPONSE AQUI NO FRONT:  ', response.data)
+            alert(response.data)
 
     }
 
