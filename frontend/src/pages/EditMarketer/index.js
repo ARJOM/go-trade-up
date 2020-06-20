@@ -18,62 +18,62 @@ export default function marketerEdit(){
     
     return (
         <div>
-            <div className="editMTop">
+            <div className="top">
                 <section className="title">
                     <h1> Editar Dados - Comerciante </h1>
                 </section>
             </div>
 
-            <section className="editMarketerForm">
+            <section className="form">
                 <form>
                     <section className="inputs">
-                        <label for="Novo Nome">
+                        <label for="Novo nome">
                             Altere seu nome:
-                            <input type="text" placeholder="Novo Nome" value={nome} onChange={text=>setNome(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Novo nome" value={nome} onChange={text=>setNome(text.target.value)}></input>
                         </label>
 
-                        <label for="Novo Email">
+                        <label for="Novo e-mail">
                             Altere seu e-mail:
-                            <input type="text" placeholder="Novo E-mail" value={email} onChange={text=>setEmail(text.target.value)}></input>
+                            <input type="text" className="break" placeholder="Novo e-mail" value={email} onChange={text=>setEmail(text.target.value)}></input>
                         </label>
 
-                        <label for="Nova Senha">
+                        <label for="Nova senha">
                             Altere sua senha:
-                            <input type="text" placeholder="Nova Senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Nova senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
                         </label>
 
-                        <label for="Novo Estado">
-                            Altere seu Estado:
-                            <input type="text" placeholder="Novo Estado" value={estado} onChange={text=>setEstado(text.target.value)}></input>
+                        <label for="Novo estado">
+                            Altere seu estado:
+                            <input type="text" className="break" placeholder="Novo estado" value={estado} onChange={text=>setEstado(text.target.value)}></input>
                         </label>
 
                         <label for="Nova Cidade">
                             Altere sua cidade:
-                            <input type="text" placeholder="Nova Cidade" value={cidade} onChange={text=>setCidade(text.target.value)}></input>
+                            <input type="text" className="break" placeholder="Nova Cidade" value={cidade} onChange={text=>setCidade(text.target.value)}></input>
                         </label>
 
                         <label for="Nova Endereco">
                             Altere seu endereco:
-                            <input type="text" placeholder="Novo Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Novo Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}></input>
                         </label>
 
                         <label for="Novo Telefone">
                             Altere seu telefone:
-                            <input type="text" placeholder="Novo Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}></input>
+                            <input type="text" className="break" placeholder="Novo Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}></input>
                         </label>
                     </section>
                     <input type="submit" value="Editar Dados"></input>
 
-                    <section>
-                        <button className="cancelarEdit">
+                    <section className="buttons">
+                        <button className="btn-cancel">
                             Cancelar
                         </button>
 
-                        <button className="exlcuirUser">
+                        <button className="btn-excluir">
                             Excluir Usuario
                         </button>
                         
-                        <button onClick={handleSubmit} className="saveEdit">
+                        <button onClick={handleSubmit} className="btn-concluir">
                             Salvar Alteracoes
                         </button>
 

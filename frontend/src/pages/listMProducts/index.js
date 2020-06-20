@@ -20,13 +20,13 @@ export default function listMProducts(){
                 <p><darker>Descrição:</darker>//render content//.</p>
                 <p><darker>Preço:</darker>//render content//.</p>
 
-                <div className="editP">
+                <div className="btn-concluir">
                     <button><a href=""> Editar Produto </a></button>
                 </div>
                 
             </section>
             
-            <div className="addP">
+            <div className="btn-add">
                 <button><a href=""> + </a></button>
             </div>
 

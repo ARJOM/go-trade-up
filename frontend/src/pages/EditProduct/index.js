@@ -16,49 +16,53 @@ export default function editProduct(){
     
     return (
         <div>
-            <div className="pubTop">
+            <div className="top">
                 <section className="title">
                     <h1> Editar Produtos </h1>
                 </section>
             </div>
 
-            <section className="pubForm">
+            <section className="form">
                 <form>
                     <section className="inputs">
-                        <label for="Nome">
+                        <label for="Novo nome">
                             Novo nome do produto:
-                            <input type="text" placeholder="Nome" value={name} onChange={text=>setName(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Novo nome" value={name} onChange={text=>setName(text.target.value)}></input>
                         </label>
 
-                        <label for="Preco">
+                        <label for="Novo preco">
                             Novo preco do produto:
-                            <input type="text" placeholder="Preco" value={preco} onChange={text=>setPreco(text.target.value)}></input>
+                            <input type="text" className="break" placeholder="Novo preco" value={preco} onChange={text=>setPreco(text.target.value)}></input>
                         </label>
                         
-                        <label for="Foto">
+                        <label for="Nova foto">
                             Nova foto:
-                            <input type="image" src="" alt="No Images Available" > </input>
+                            <input type="image" className="nbreak" src="" alt="No Images Available" > </input>
                         </label>
 
-                        <label for="Descricao">
+                        <label for="Nova descricao">
                             Nova descricao:
-                            <input type="text" placeholder="Descricao" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Nova descricao" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
                         </label>
 
-                        <label for="Quantidade">
+                        <label for="Nova quantidade">
                             Nova quantidade:
-                            <input type="number" placeholder="Quantidade" min="1" value={quantidade} onChange={text=>setQuantidade(text.target.value)}></input>
+                            <input type="number" className="break" placeholder="Nova quantidade" min="1" value={quantidade} onChange={text=>setQuantidade(text.target.value)}></input>
                         </label>
                     </section>
 
                     <input type="submit" value="Alterar"></input>
 
-                    <section>
-                        <button className="cancelarAlt">
+                    <section className="buttons">
+                        <button className="btn-cancel">
                             Cancelar
                         </button>
+
+                        <button className="btn-excluir">
+                            Excluir Produto
+                        </button>
                         
-                        <button onClick={handleSubmit} className="Alterar">
+                        <button onClick={handleSubmit} className="btn-concluir">
                             Salvar Alteracoes
                         </button>
 

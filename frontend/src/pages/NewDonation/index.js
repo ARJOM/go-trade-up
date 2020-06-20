@@ -13,23 +13,23 @@ export default function Donation(){
     
     return (
         <div>
-            <div className="donationTop">
+            <div className="top">
                 <section className="title">
                     <h1> Realizar Nova Doação </h1>
                 </section>
             </div>
 
-            <section className="donationForm">
+            <section className="form">
                 <form>
                     <section className="inputs">
                         <label for="Valor">
                             Valor da doação:
-                            <input type="text" placeholder="Valor" value={valores} onChange={text=>setValores(text.target.value)}></input>
+                            <input type="text" className="nbreak" className="req" placeholder="Valor" value={valores} onChange={text=>setValores(text.target.value)}></input>
                         </label>
 
                         <label for="Descricao">
                             Descreva sua doacao:
-                            <input type="text" placeholder="Descricao" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
+                            <input type="text" className="nbreak" className="req" placeholder="Descricao" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
                         </label>
                     </section>
 
@@ -37,11 +37,11 @@ export default function Donation(){
                     <input type="submit" value="Doar"></input>
 
                     <section>
-                        <button className="cancelarDonation">
+                        <button className="btn-cancel">
                             Cancelar
                         </button>
                         
-                        <button onClick={handleSubmit} className="donate">
+                        <button onClick={handleSubmit} className="btn-concluir">
                             Efetuar Doacao
                         </button>
 
