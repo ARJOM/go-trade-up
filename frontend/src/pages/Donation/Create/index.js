@@ -1,30 +1,30 @@
 import React, {useState} from 'react';
-import api from '../../services/api';
+import api from '../../../services/api';
 import './style.css';
 
-export default function pubTransparencia(){
+export default function CreateDonation(){
 
     async function handleSubmit(){
         const data = {
-            photo: foto,
+            valuedn: valores,
             description: descricao
         }
     }
-    
+
     return (
         <div>
-            <div className="pubTop">
+            <div className="donationTop">
                 <section className="title">
-                    <h1> Nova Publicacao de Transparencia </h1>
+                    <h1> Realizar Nova Doação </h1>
                 </section>
             </div>
 
-            <section className="pubForm">
+            <section className="donationForm">
                 <form>
                     <section className="inputs">
-                        <label for="Foto">
-                            Foto:
-                            <input type="image" src="" alt="No Images Available" > </input>
+                        <label for="Valor">
+                            Valor da doação:
+                            <input type="text" placeholder="Valor" value={valores} onChange={text=>setValores(text.target.value)}></input>
                         </label>
 
                         <label for="Descricao">
@@ -33,15 +33,16 @@ export default function pubTransparencia(){
                         </label>
                     </section>
 
-                    <input type="submit" value="Publicar"></input>
+                    <h3> Doe com PayPal <a> </a> </h3>
+                    <input type="submit" value="Doar"></input>
 
                     <section>
-                        <button className="cancelarPub">
+                        <button className="cancelarDonation">
                             Cancelar
                         </button>
-                        
-                        <button onClick={handleSubmit} className="Pub">
-                            Publicar
+
+                        <button onClick={handleSubmit} className="donate">
+                            Efetuar Doacao
                         </button>
 
                     </section>

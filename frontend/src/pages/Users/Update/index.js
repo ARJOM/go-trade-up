@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import api from '../../../services/api';
 import './style.css';
 
-export default function userEdit(){
+export default function EditUser(){
 
     async function handleSubmit(){
         const data = {
@@ -11,7 +11,7 @@ export default function userEdit(){
             password: senha
         }
     }
-    
+
     return (
         <div>
             <div className="editTop">
@@ -48,7 +48,7 @@ export default function userEdit(){
                         <button className="exlcuirUser">
                             Excluir Usuario
                         </button>
-                        
+
                         <button onClick={handleSubmit} className="saveEdit">
                             Salvar Alteracoes
                         </button>

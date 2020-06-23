@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import api from '../../services/api';
+import api from '../../../services/api';
 import './style.css';
 
-export default function marketerEdit(){
+export default function EditMarket(){
 
     async function handleSubmit(){
         const data = {
@@ -15,7 +15,7 @@ export default function marketerEdit(){
             telephone: telefone
         }
     }
-    
+
     return (
         <div>
             <div className="editMTop">
@@ -72,7 +72,7 @@ export default function marketerEdit(){
                         <button className="exlcuirUser">
                             Excluir Usuario
                         </button>
-                        
+
                         <button onClick={handleSubmit} className="saveEdit">
                             Salvar Alteracoes
                         </button>
