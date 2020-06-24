@@ -1,0 +1,158 @@
+
+.background1{
+  background-color: #CCDBDC !important;
+  background-image: url(https://timeline.canaltech.com.br/348805.1400/voluntarios-criam-marketplace-gratuito-para-pequenos-comerciantes.jpg);
+  opacity: 0.7;  
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.background1 section, h1, p, darker{
+  background: none;
+}
+.background1 section{
+  margin-bottom: 50px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.background1 h1{
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+.background1 p{
+  font-size: 1.3em;
+  text-align: center;
+  width: 50%;
+  margin-top: 20px;
+}
+.optionsHome{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10vh;
+}
+.background2, .background3{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration-color: black;
+    border-radius: 3.5px;
+    width: 35vw;
+    height:100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+.background2 p, .background3 p{
+  background: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 80%;
+}
+.text3, .text2{
+	padding: 120px 20px;
+}
+.covid-position{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.formCorona{
+  background-image: url(https://www.contabeis.com.br/assets/img/news/n_43424_8afb5804f92f8d5f149bfc66d149aa92.jpg?v=1592497801);
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  text-align: center;
+  width: 80vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+.formCorona input{
+  background-color: darkgreen;
+  color: white;
+  text-align: center;
+  display: table;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 9px;
+  border: none;
+}
+.formCorona select{
+  position: relative;
+  background-color: darkgreen;
+  height: 6vh;
+  width: 35vw;
+  color: white;
+  border-radius: 9px;
+  border: none;
+  opacity: 1;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  top: 15px;
+  margin: 2%;
+  font-size: 1em;
+}
+.formCorona button{
+  background-color: darkgreen;
+  height: 6vh;
+  width: 15vw;
+  color: white;
+  border-radius: 9px;
+  border: none;
+  opacity: 1;
+  text-align: center;
+  position: relative;
+  top: 50px;
+}
+.formCorona button:hover{
+  opacity: 0.5;
+}
+
+.formCorona form, .formCorona div{
+  background: none;
+}
+
+.background5 section,  .background5 h1, .background5 p{
+  background: none;
+  padding: 1vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  font-weight: bold;
+}
+.formCorona h2{
+  background: none;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  bottom: 10vh;
+  font-size: 2.2em;
+}
+.formCorona p{
+  font-size: 2em;
+  width: 70%;
+  text-align: center;
+  left: 15%;
+  position: relative;
+  color: gold;
+  font-weight: 400;
+}
+.background5 h1{
+  font-size: 1.7em;
+}

@@ -1,13 +1,7 @@
 *{
-    background-color: #CCDBDC;
+	padding: 0;
+	margin: 0;
 }
-
-div{
-    background-color: #003E72;
-    margin: 1px;
-    padding: 4.5px;
-}
-
 .top{
 	text-align: center;
     padding: 5px 2.5px;
@@ -21,7 +15,7 @@ div{
     max-width: 500px;
 }
 
-.background1, .background4, .background5{
+ .background5{
 	display: flex;
 	float: right;
 	-ms-flex-wrap: nowrap;
@@ -31,69 +25,25 @@ div{
     margin: 10px 5px;
     text-decoration-color: black;
     text-shadow: cadetblue;
-    text-justify: inter-word;
+		text-justify: inter-word;
+		background-color: #ACC5C6;
     border-radius: 3.5px;
-    border-style: solid;
     border-bottom: none;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     max-width: 100%;
 }
 
-.background2{
-	display: flex;
-	text-align: center;
-	float: right;
-    padding: 5px 2.5px;
-    margin: 10px 5px;
-    text-decoration-color: black;
-    text-shadow: cadetblue;
-    text-justify: inter-word;
-    border-radius: 3.5px;
-    border-style: solid;
-    border-bottom: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    max-width: 50%;
-}
 
-.text1, .text2{
-	padding: 70px 70px;
-}
 
-.text3{
-	padding: 70px 70px;
-}
 
-.background3{
-	display: flex;
-	float: left;
-	text-align: center;
-    padding: 5px 2.5px;
-    margin: 10px 5px;
-    text-decoration-color: black;
-    text-shadow: cadetblue;
-    text-justify: inter-word;
-    border-radius: 3.5px;
-    border-style: solid;
-    border-bottom: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    max-width: 40%;
-}
 
-.background1 .text1{
-	background-image: url(https://timeline.canaltech.com.br/348805.1400/voluntarios-criam-marketplace-gratuito-para-pequenos-comerciantes.jpg);
-}
 
 .background2 .text2{
 	background-image: url(https://www.jornalcontabil.com.br/wp-content/uploads/2019/09/vendas-online-1.jpg);
 }
 
-.background3 .text3{
-	background-image: url(https://gmad.com.br/wp-content/uploads/2020/04/Doa%C3%A7%C3%B5es-1440x564_c.jpg);
-}
 
-.background4 form, .text4{
-	background-image: url(https://www.contabeis.com.br/assets/img/news/n_43424_8afb5804f92f8d5f149bfc66d149aa92.jpg?v=1592497801);
-}
+
 
 .background5 .text5{
 	background-image: none;
@@ -115,7 +65,9 @@ div{
 	padding: 20px 12px 10px 20px;
 	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
-
+option{
+	background-color: darkgreen;
+}
 .form li {
 	padding: 0;
 	display: block;
@@ -180,15 +132,15 @@ div{
 	color:red;
 }
 
-.form .buttons .btn-cancel {
+button .btn-cancel {
     background-color: red;
 }
 
-.form .buttons .btn-excluir {
+.btn-excluir {
     background-color: darkorange;
 }
 
-.form .buttons .btn-concluir {
+.btn-concluir {
     background-color: darkgreen;
 }
 
