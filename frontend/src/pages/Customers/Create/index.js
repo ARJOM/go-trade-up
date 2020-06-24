@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import api from '../../../services/api.js';
 import './styles.css';
 
-export default function Create(){
+export default function CreateCustomer(){
 
     const [name, setName ] = useState();
     const [email, setEmail] = useState();
