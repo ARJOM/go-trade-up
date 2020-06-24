@@ -1,0 +1,19 @@
+.foooter{
+  background-color: #003E72;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5vh;
+  padding: 4vh;
+}
+.foooter section{
+  background-color: #003E72;
+}
+.btn-concluir{
+  width: 15vw;
+  height: 8vh;
+  border-radius: 7px;
+  margin-bottom: 3vh;
+}
