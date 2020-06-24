@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import api from '../../services/api';
+import api from '../../../services/api';
 import './style.css';
 
-export default function Donation(){
+export default function CreateDonation(){
 
     async function handleSubmit(){
         const data = {
@@ -10,7 +10,7 @@ export default function Donation(){
             description: descricao
         }
     }
-    
+
     return (
         <div>
             <div className="top">
@@ -40,7 +40,7 @@ export default function Donation(){
                         <button className="btn-cancel">
                             Cancelar
                         </button>
-                        
+
                         <button onClick={handleSubmit} className="btn-concluir">
                             Efetuar Doacao
                         </button>

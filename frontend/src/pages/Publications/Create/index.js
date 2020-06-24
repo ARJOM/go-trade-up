@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import api from '../../services/api';
+import api from '../../../services/api';
 import './style.css';
 
-export default function pubTransparencia(){
+export default function CreatePublication(){
 
     async function handleSubmit(){
         const data = {
@@ -10,7 +10,7 @@ export default function pubTransparencia(){
             description: descricao
         }
     }
-    
+
     return (
         <div>
             <div className="top">
@@ -39,7 +39,7 @@ export default function pubTransparencia(){
                         <button className="btn-cancel">
                             Cancelar
                         </button>
-                        
+
                         <button onClick={handleSubmit} className="btn-concluir">
                             Publicar
                         </button>

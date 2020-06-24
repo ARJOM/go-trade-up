@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import api from '../../services/api';
+import api from '../../../services/api';
 import './style.css';
 
-export default function postsDonation(){
-    
+export default function ListPublication(){
+
     return (
         <div>
             <div className="top">
@@ -13,13 +13,13 @@ export default function postsDonation(){
             </div>
 
             <section className="content">
-                
+
                 <img src="" alt="No images available"> </img>
 
                 <p> <dark> //render content// </dark> </p>
 
             </section>
-            
+
         </div>
     )
 }

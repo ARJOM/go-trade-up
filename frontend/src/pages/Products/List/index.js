@@ -1,34 +1,29 @@
 import React, {useState} from 'react';
-import api from '../../services/api';
+import api from '../../../services/api';
 import './style.css';
 
-export default function listMProducts(){
-    
+export default function ListProducts(){
+
     return (
         <div>
             <div className="top">
                 <section className="title">
-                    <h1> Meus Produtos </h1>
+                    <h1> Produtos de //render content// </h1>
                 </section>
             </div>
 
             <section className="content">
-                
+
                 <img src="" alt="No images available"> </img>
 
                 <p><darker>Título:</darker>//render content//.</p>
                 <p><darker>Descrição:</darker>//render content//.</p>
+
+                <button className="btn-contact"><a href=""><p>Entre em contato</p></a></button>
+
                 <p><darker>Preço:</darker>//render content//.</p>
 
-                <div className="btn-concluir">
-                    <button><a href=""> Editar Produto </a></button>
-                </div>
-                
             </section>
-            
-            <div className="btn-add">
-                <button><a href=""> + </a></button>
-            </div>
 
         </div>
     )

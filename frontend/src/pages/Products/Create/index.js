@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import api from '../../services/api';
+import api from '../../../services/api';
 import './style.css';
 
-export default function editProduct(){
+export default function CreateProduct(){
 
     async function handleSubmit(){
         const data = {
@@ -13,7 +13,7 @@ export default function editProduct(){
             quantity: quantidade,
         }
     }
-    
+
     return (
         <div>
             <div className="top">
@@ -34,7 +34,7 @@ export default function editProduct(){
                             Preco do produto:
                             <input type="text" className="break" className="req" placeholder="Preco" value={preco} onChange={text=>setPreco(text.target.value)}></input>
                         </label>
-                        
+
                         <label for="Foto">
                             Foto:
                             <input type="image" src="" alt="No Images Available" > </input>
@@ -52,7 +52,7 @@ export default function editProduct(){
                         <button className="btn-cancel">
                             Cancelar
                         </button>
-                        
+
                         <button onClick={handleSubmit} className="btn-concluir">
                             Salvar Alteracoes
                         </button>

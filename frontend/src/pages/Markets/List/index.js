@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import api from '../../services/api';
+import api from '../../../services/api';
 import './style.css';
 
-export default function listMarket(){
-    
+export default function ListMarket(){
+
     return (
         <div>
             <div className="top">
@@ -13,13 +13,13 @@ export default function listMarket(){
             </div>
 
             <section className="content">
-                
+
                 <p><darker>Comércio: </darker>//render content//.</p>
 
                 <p><darker>Local de atuação:</darker>//render content//.</p>
 
             </section>
-            
+
             <section className="buttons">
                 <button className="btn-listprd"> <a href=""> Ver Produtos </a> </button>
 

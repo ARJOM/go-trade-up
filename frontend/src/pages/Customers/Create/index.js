@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import api from '../../services/api.js';
+import api from '../../../services/api.js';
 import './styles.css';
 
-export default function CadastroCliente(){
-  
+export default function Create(){
+
     const [name, setName ] = useState();
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
-    
+
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -46,13 +46,13 @@ export default function CadastroCliente(){
 
                     <section className="buttons">
                         <button className="btn-cancel">Cancelar</button>
-            
+
                         <button onClick={handleSubmit} className="btn-concluir">Concluir</button>
                     </section>
                 </form>
             </section>
 
-         
+
 
         </div>
     )

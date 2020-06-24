@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import api from '../../services/api';
+import api from '../../../services/api';
 import './style.css';
 
-export default function editProduct(){
+export default function EditProduct(){
 
     async function handleSubmit(){
         const data = {
@@ -13,7 +13,7 @@ export default function editProduct(){
             quantity: quantidade
         }
     }
-    
+
     return (
         <div>
             <div className="top">
@@ -34,7 +34,7 @@ export default function editProduct(){
                             Novo preco do produto:
                             <input type="text" className="break" placeholder="Novo preco" value={preco} onChange={text=>setPreco(text.target.value)}></input>
                         </label>
-                        
+
                         <label for="Nova foto">
                             Nova foto:
                             <input type="image" className="nbreak" src="" alt="No Images Available" > </input>
@@ -61,7 +61,7 @@ export default function editProduct(){
                         <button className="btn-excluir">
                             Excluir Produto
                         </button>
-                        
+
                         <button onClick={handleSubmit} className="btn-concluir">
                             Salvar Alteracoes
                         </button>
