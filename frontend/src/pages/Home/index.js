@@ -2,10 +2,14 @@ import React, {useState} from 'react';
 import api from '../../services/api';
 import './style.css';
 import '/Users/gabri/go-trade-up/frontend/src/global.css'
+import {View, StyleSheet, Modal, Button, Text} from 'reac-native';
+import {MaterialIcons} from '@expo/vector-icons';
+import React, {Component} from 'react';
+import { render } from 'react-dom';
 
 export default function Home(){
-    
-    return (
+
+return (
         <div>
             <div className="background1">
                 <section className="text1">
@@ -32,7 +36,7 @@ export default function Home(){
                     <h1 className="title2"><darker>Radar Covid-19</darker></h1>
                     <p className="content">Consulte aqui os números relativos à pandemia de Covid-19 na sua região.</p>
                         <form>
-                            <p><darker>Unidade Federativa:</darker></p>
+                            <p><darker>"Unidade Federativa"</darker></p>
                             <select>
                                 <option selected="selected">None</option>
                                 <option> PB </option>

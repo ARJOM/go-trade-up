@@ -29,11 +29,13 @@ export default function Dashboard(props){
                 <a href="#" className="nav-btn">Nova Publicação</a>
             </div>
         </nav>
+
         </div>
 
         <div className="body">
                {props.children}
         </div>
+    
         </div>
 
     )
