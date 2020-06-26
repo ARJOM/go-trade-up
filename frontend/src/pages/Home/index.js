@@ -7,12 +7,23 @@ export default function Home(){
     const [cidade, setCidade] = useState('');
     const [options, setOptions] = useState([]);
 
-    function enviar(){
-        alert('Ta enviando ainda não, calma ai')
+    async function enviar(e){
+        e.preventDefault();
+        const maluco = await api.get(`https://brasil.io/api/dataset/covid19/caso/data/?format=json&is_last=True&state=${estado}&city=${cidade}`)
+        const base = maluco.data;
+        const dados = base.results;
+        console.log(dados[0])
+        alert(`
+            Dados colhidos na data ${dados[0].date}
+            Casos confirmados: ${dados[0].confirmed}
+            Mortes confirmadas: ${dados[0].deaths}
+        
+            `)
     }
         useEffect(()=>{
 
             searchh()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [estado])
 
         async function searchh(){

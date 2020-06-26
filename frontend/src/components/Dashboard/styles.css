@@ -29,16 +29,13 @@
 span{
     background: none;
 }
-.useer: hover{
-    opacity: 1;
-}
 .user{
     border-radius: 50%;
     background: none;
-    width: 5em;
-    height: 5em;
+    width: 3.7em;
+    height: 3.6em;
     position: relative;
-    right: 20px;
+    right: 30px;
     top: 5px;
 }
 .logo{
@@ -68,7 +65,7 @@ a{
     background-color: #003E72;
 }
 
-a:hover{
+nav a:hover{
     color: white;
     background-color: #0059A2;
     padding: 20px;

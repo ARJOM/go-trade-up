@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import './styles.css'
 
@@ -11,7 +10,7 @@ export default function Dashboard(props){
             <div className="photos-dashboard">
             <span className="logo" ><img src={logo} height="60px" width="210px" /> </span>
         
-        <span><a className="useer"><img  className="user"  src="https://www.pngkit.com/png/detail/133-1338563_boys-wrestling-avatar-html.png" /></a></span>
+        <span><a href="#"><img  className="user"  src="https://www.pngkit.com/png/detail/133-1338563_boys-wrestling-avatar-html.png" /></a></span>
             </div>
             
         <nav className="menu">
