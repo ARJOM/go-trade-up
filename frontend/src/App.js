@@ -1,13 +1,15 @@
 import React from 'react';
 import Dashboard from './components/Dashboard';
-import CadastroCliente from './pages/CadastroCliente';
+import Home from "./pages/Home";
+import Foooter from './components/Foooter';
 import './global.css'
 
 export default function App() {
   return (
     <div>
     <Dashboard>
-      <CadastroCliente />
+      <Home />
+      <Foooter/>
     </Dashboard>
     </div>
     );

@@ -20,6 +20,24 @@
     background-color: #003E72;
     overflow: hidden;
 }
+.photos-dashboard{
+    background-color: #003E72;
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+span{
+    background: none;
+}
+.user{
+    border-radius: 50%;
+    background: none;
+    width: 3.7em;
+    height: 3.6em;
+    position: relative;
+    right: 30px;
+    top: 5px;
+}
 .logo{
     position: relative;
     top: 0.5em;
@@ -38,7 +56,7 @@ hr{
     display: flex;
     flex-direction: column;
     position: fixed;
-    margin-top: 68px; 
+    margin-top: 75px; 
 }
 a{
     color: black;
@@ -47,7 +65,7 @@ a{
     background-color: #003E72;
 }
 
-a:hover{
+nav a:hover{
     color: white;
     background-color: #0059A2;
     padding: 20px;
