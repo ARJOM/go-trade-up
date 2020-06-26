@@ -20,6 +20,27 @@
     background-color: #003E72;
     overflow: hidden;
 }
+.photos-dashboard{
+    background-color: #003E72;
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+span{
+    background: none;
+}
+.useer: hover{
+    opacity: 1;
+}
+.user{
+    border-radius: 50%;
+    background: none;
+    width: 5em;
+    height: 5em;
+    position: relative;
+    right: 20px;
+    top: 5px;
+}
 .logo{
     position: relative;
     top: 0.5em;
@@ -38,7 +59,7 @@ hr{
     display: flex;
     flex-direction: column;
     position: fixed;
-    margin-top: 68px; 
+    margin-top: 75px; 
 }
 a{
     color: black;
