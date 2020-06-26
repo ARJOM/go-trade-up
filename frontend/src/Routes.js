@@ -31,10 +31,25 @@ export default function Routes() {
         <BrowserRouter>
             <Switch>
                 {/*General routes*/}
+                <Route path="/" exact component={Home} />
+                <Route path="/create/market" component={CreateMarket} />
+                <Route path="/create/user" component={CreateCustomer} />
+                <Route path="/list/products" component={ListMarketProducts} />
+                <Route path="/create/donation" component={CreateDonation} />
 
                 {/*Administration routes */}
-
+                <Route path="create/product" component={CreateProduct} />
+                <Route path="/edit/product" component={EditProduct} />
+                <Route path="/edit/user" component={EditCustomer} />
+                <Route path="/edit/market" component={EditMarket} />
+                <Route path="/list/markets" component={ListMarket} />
+               <Route path="/list/products" component={ListProducts} />
+               <Route path="/list/publication" component={ListPublication} />
                 {/*Error route*/}
+
+                {/*Rotas dos devs*/}
+                <Route path="create/publication" component={CreatePublication} />
+
 
             </Switch>
         </BrowserRouter>
