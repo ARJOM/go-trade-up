@@ -1,6 +1,6 @@
 import React from 'react';
 import Dashboard from './components/Dashboard';
-import CadastroCliente from './components/Cadastro-Cliente';
+import CadastroCliente from './pages/CadastroCliente';
 import './global.css'
 
 export default function App() {
