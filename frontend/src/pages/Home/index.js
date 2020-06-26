@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import api from '../../services/api';
 import './styles.css';
 
+
 export default function Home(){
     const [estado, setEstado] = useState('AL');
     const [cidade, setCidade] = useState('');
@@ -33,7 +34,7 @@ export default function Home(){
         }
     
     return (
-        <div>
+      <div>
             <div className="background1">
                 <section className="text1">
                     <h1 className="title2"><darker>Compre diretamente <br/> a pequenos comerciantes locais</darker></h1>
@@ -106,6 +107,27 @@ export default function Home(){
             </form>
             </section>
             </div>
+            <div className="background4">
+                <section className="text4">
+                    <h1 className="title2"><darker>Radar Covid-19</darker></h1>
+                    <p className="content">Consulte aqui os números relativos à pandemia de Covid-19 na sua região.</p>
+                        <form>
+                            <p><darker>"Unidade Federativa"</darker></p>
+                            <select>
+                                <option selected="selected">None</option>
+                                <option> PB </option>
+                            </select>
+                            
+                            <p><darker>Cidade:</darker></p>
+                            <select>
+                                <option className="selected" selected="selected">None</option>
+                                <option>Cajazeiras</option>
+                                <option>Soledade</option>
+                                <option>Campina Grande</option>
+                            </select>
+                            <input placeholder="Procurar" type="submit"> </input>
+                        </form>
+                </section>
             </div>
 
             <div className="background5">

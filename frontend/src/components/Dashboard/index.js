@@ -35,12 +35,13 @@ export default function Dashboard(props){
             </div>
             
         </nav>
-        
+      
         </div>
 
         <div className="body">
                {props.children}
         </div>
+    
         </div>
 
     )
