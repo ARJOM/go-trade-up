@@ -1,49 +1,48 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './style.css';
+import './styles.css';
 
 export default function CreateDonation(){
+    const [valores, setValores] = useState();
+    const [description, setDescription] = useState();
+    const [descricao, setDescricao] = useState();
 
     async function handleSubmit(){
         const data = {
-            valuedn: valores,
+            valores: valores,
             description: descricao
         }
     }
 
     return (
-        <div>
-            <div className="top">
+        <div className="donate-container">
+            <div className="newDonation">
                 <section className="title">
-                    <h1> Realizar Nova Doação </h1>
+                    <h1>  Nova Doação </h1>
                 </section>
             </div>
 
-            <section className="form">
+            <section className="former">
                 <form>
                     <section className="inputs">
-                        <label for="Valor">
-                            Valor da doação:
-                            <input type="text" className="nbreak" className="req" placeholder="Valor" value={valores} onChange={text=>setValores(text.target.value)}></input>
-                        </label>
+                    <span>Valor da doação:</span>
 
+                        <label for="Valor">
+                            <input type="text" className="nbreak" className="req" value={valores} onChange={text=>setValores(text.target.value)}></input>
+                        </label>
+                        
+                       <span> Descrição:</span>
                         <label for="Descricao">
-                            Descreva sua doacao:
-                            <input type="text" className="nbreak" className="req" placeholder="Descricao" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
+                            <textarea  className="textAreaa" type="text" className="nbreak" value={descricao} onChange={text=>setDescricao(text.target.value)} />
                         </label>
                     </section>
-
-                    <h3> Doe com PayPal <a> </a> </h3>
-                    <input type="submit" value="Doar"></input>
-
                     <section>
-                        <button className="btn-cancel">
-                            Cancelar
-                        </button>
-
-                        <button onClick={handleSubmit} className="btn-concluir">
-                            Efetuar Doacao
-                        </button>
+                   
+                    <section className="paypal">
+                  <a href="#">
+                  Clique aqui para doar: <img src="https://timeline.canaltech.com.br/339987.700/o-que-e-o-paypal-saiba-tudo-sobre-a-plataforma-de-pagamentos-155603.jpg" />
+                    </a>
+                        </section>
 
                     </section>
                 </form>
