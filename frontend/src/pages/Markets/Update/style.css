@@ -1,0 +1,49 @@
+.editMarket{
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.titulo{
+  font-size: 1.2em;
+  font-size: 700;
+}
+.inputs input{
+  background-color: white;
+  border: none;
+  border-radius: 7px;
+  margin: 5px !important;
+}
+.telefone{
+  width: 617px;
+}
+.location{
+  display: flex;
+}
+.location input{
+  width: 200px !important; 
+}
+.botoes{
+  display: flex;
+  justify-content: space-between;
+}
+.botoes button{
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.3em;
+}
+.btn-cancelado{
+  background-color: darkorange !important;
+  color: black !important;
+}
+.btn-excluido{
+  background-color: #ff0000 !important;
+  color: black !important;
+}
+.btn-concluido{
+  background-color: darkgreen !important;
+  color: black !important;
+}
