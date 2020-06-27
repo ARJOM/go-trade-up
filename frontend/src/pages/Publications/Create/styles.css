@@ -1,0 +1,36 @@
+.inputs{
+  width: 40vw !important;
+  height: 40vh;
+  margin-top: 60px;
+}
+.container-transparencia{
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.top{
+  border: none;
+}
+.Descricao span{
+  font-weight: 400;
+  position: relative;
+  bottom: 20px;
+  font-size: 1.5em;
+}
+.buttons{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.btn-concluir{
+  background-color: rgb(35, 173, 35) !important;
+  font-size: 1.2em;
+}
+textarea{
+  background-color: white;
+  height: 20vh;
+}
