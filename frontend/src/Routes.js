@@ -26,6 +26,9 @@ import ListProducts from "./pages/Products/List";
 // Home
 import Home from "./pages/Home";
 
+// Not Found
+import NotFound from "./pages/NotFound";
+
 export default function Routes() {
     return (
         <BrowserRouter>
@@ -50,7 +53,8 @@ export default function Routes() {
                 {/*Rotas dos devs*/}
                 <Route path="create/publication" component={CreatePublication} />
 
-
+                {/*Error route*/}
+                <Route path="*" component={NotFound}/>
             </Switch>
         </BrowserRouter>
     )
