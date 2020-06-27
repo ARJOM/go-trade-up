@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './style.css';
+import './styles.css';
 
 export default function CreateMarket(){
 
@@ -31,10 +31,10 @@ export default function CreateMarket(){
     }
 
     return(
-        <div>
+        <div className="container-market">
             <div className="top">
                 <section className="title">
-                    <h1>Cadastre-se como Comerciante</h1>
+                    <h1>Cadastrar-se como Comerciante</h1>
                 </section>
             </div>
 
@@ -42,50 +42,42 @@ export default function CreateMarket(){
                 <form type="submit">
                     <section class="inputs">
                         <label for="Nome">
-                            Nome:
                             <input type="text" className="nbreak" className="req" placeholder="Nome" value={nome} onChange={text=>setName(text.target.value)}></input>
                         </label>
 
                         <label for="Email">
-                            Email:
                             <input type="text" className="nbreak" className="req" placeholder="E-mail" value={email} onChange={text=>setEmail(text.target.value)} ></input>
                         </label>
 
                         <label for="Senha">
-                            Senha:
                             <input type="text" className="nbreak" className="req" placeholder="Senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
                         </label>
 
                         <label for="Estado">
-                            Estado:
                             <input type="text" className="break" className="req" placeholder="Estado" value={estado} onChange={text=>setEstado(text.target.value)}></input>
                         </label>
 
                         <label for="Cidade">
-                            Cidade:
                             <input type="text" className="break" className="req" placeholder="Cidade" value={cidade} onChange={text=>setCidade(text.target.value)}></input>
                         </label>
 
                         <label for="Endereco">
-                            Endereco:
                             <input type="text" className="nbreak" className="req" placeholder="Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}></input>
                         </label>
 
                         <label for="Telefone">
-                            Telefone para contato:
                             <input type="text" className="break" className="req" placeholder="Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}></input>
                         </label>
 
                     </section>
-                    <input type="submit" value="Cadastrar"></input>
 
                     <section class="buttons">
                         <button className="btn-cancel">
                             Cancelar
                         </button>
 
-                        <button onClick={handleSubmit} className="btn-concluir">
-                            Concluir Cadastro
+                        <button onClick={handleSubmit} className="btn-conclui">
+                            Concluir
                         </button>
                     </section>
                 </form>
