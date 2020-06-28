@@ -9,11 +9,24 @@
   font-size: 1.2em;
   font-size: 700;
 }
-.inputs input{
+.entradas{
+  margin-top: 40px;
+  min-height: 80vh !important;
+  width: 70vw !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.entradas b{
+  width: 47vw;
+  margin-bottom: 4px;
+}
+.entradas input{
   background-color: white;
   border: none;
   border-radius: 7px;
-  margin: 5px !important;
+  margin: 7px !important;
 }
 .telefone{
   width: 617px;
@@ -22,15 +35,17 @@
   display: flex;
 }
 .location input{
-  width: 200px !important; 
+  width: 180px !important; 
 }
 .botoes{
+  position: relative;
+  bottom: 35px;
+  width: 70vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .botoes button{
   width: 200px;
-  height: 40px;
   border: none;
   border-radius: 7px;
   font-size: 1.3em;

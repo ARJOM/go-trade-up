@@ -25,31 +25,31 @@ export default function EditMarket(){
 
     return (
         <div className="editMarket">
-            <div className="top">
-                <section className="titulo">
+            <div>
+                <section>
                     <h1> Editar Dados - Comerciante </h1>
                 </section>
             </div>
 
-            <section className="form">
+            <section>
                 <form>
-                    <section className="inputs">
-                        <span className="titulo"> Novo nome:</span>
+                    <section className="entradas">
+                        <b> Novo nome:</b>
                         <label for="Novo nome">
-                            <input type="text" className="nbreak" placeholder="Novo nome" value={nome} onChange={text=>setNome(text.target.value)}></input>
+                            <input type="text" className="telefone" placeholder="Novo nome" value={nome} onChange={text=>setNome(text.target.value)}></input>
                         </label>
 
-                        <span className="titulo">Novo e-mail:</span>
+                      <b> Novo e-mail:</b>
                         <label for="Novo e-mail">
-                            <input type="text" className="break" placeholder="Novo e-mail" value={email} onChange={text=>setEmail(text.target.value)}></input>
+                            <input type="text" className="telefone" placeholder="Novo e-mail" value={email} onChange={text=>setEmail(text.target.value)}></input>
                         </label>
 
-                        <span className="titulo">Nova senha:</span>
+                      <b>Nova senha:</b>
                         <label for="Nova senha">
-                            <input type="text" className="nbreak" placeholder="Nova senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
+                            <input type="text" className="telefone" placeholder="Nova senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
                         </label>
 
-                        <span className="titulo">Novo número:</span>
+                        <b>Novo número:</b>
                         <label for="Novo Telefone">
                             <input type="text" className="telefone" placeholder="Novo Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}></input>
                         </label>
@@ -67,10 +67,7 @@ export default function EditMarket(){
                             <input type="text" className="nbreak" placeholder="Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}></input>
                         </label>
                         </section>
-
-                    </section>
-
-                    <section className="botoes">
+                        <section className="botoes">
                         <button className="btn-cancelado">
                             Cancelar
                         </button>
@@ -84,6 +81,9 @@ export default function EditMarket(){
                         </button>
 
                     </section>
+                    </section>
+
+                 
                 </form>
             </section>
         </div>
