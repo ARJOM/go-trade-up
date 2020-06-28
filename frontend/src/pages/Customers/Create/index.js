@@ -25,26 +25,27 @@ export default function CreateCustomer(){
     }
 
     return(
-        <div className="top">
-            <section className="title">
+        <div className="clientContainer">
+            <section className="former">
+            <section>
                 <h1>Cadastrar-se como Cliente</h1>
             </section>
-
-            <section className="form">
                 <form type="submit">
-                    <section className="inputs">
+                    <section>
 
-                    <input type="text" className="nbreak" className="req" placeholder="Nome" value={name}
+                    <input type="text" placeholder="Nome" value={name}
                     onChange={text=>setName(text.target.value)} />
 
-                    <input type="text" className="break" className="req" placeholder="Email" value={email}
+                    <input type="text" placeholder="Email" value={email}
                     onChange={text=>setEmail(text.target.value)} />
 
-                    <input type="password" className="break" className="req" placeholder="Senha" value={senha}
-                    onChange={text=>setSenha(text.target.value)} />
+                    <input type="password" placeholder="Senha" value={senha}
+                     onChange={e=> setSenha(e.target.value)} />
+
+                 
                     </section>
 
-                    <section className="buttons">
+                    <section className="butoes">
                         <button className="btn-cancel">Cancelar</button>
 
                         <button onClick={handleSubmit} className="btn-concluir">Concluir</button>
