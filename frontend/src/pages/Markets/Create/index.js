@@ -32,17 +32,17 @@ export default function CreateMarket(){
 
     return(
         <div className="container-market">
-            <div className="top">
-                <section className="title">
+            <div>
+                <section className="titulo">
                     <h1>Cadastrar-se como Comerciante</h1>
                 </section>
             </div>
 
-            <section className="form">
+            <section className="formulario">
                 <form type="submit">
                     <section class="inputs">
                         <label for="Nome">
-                            <input type="text" className="nbreak" className="req" placeholder="Nome" value={nome} onChange={text=>setName(text.target.value)}></input>
+                            <input type="text"className="req" placeholder="Nome" value={nome} onChange={text=>setName(text.target.value)}></input>
                         </label>
 
                         <label for="Email">
@@ -50,7 +50,7 @@ export default function CreateMarket(){
                         </label>
 
                         <label for="Senha">
-                            <input type="text" className="nbreak" className="req" placeholder="Senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
+                            <input type="text" className="req" placeholder="Senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
                         </label>
 
                         <label for="Estado">
@@ -71,12 +71,12 @@ export default function CreateMarket(){
 
                     </section>
 
-                    <section class="buttons">
+                    <section class="botoes">
                         <button className="btn-cancel">
                             Cancelar
                         </button>
 
-                        <button onClick={handleSubmit} className="btn-conclui">
+                        <button onClick={handleSubmit} className="btn-concluir">
                             Concluir
                         </button>
                     </section>
