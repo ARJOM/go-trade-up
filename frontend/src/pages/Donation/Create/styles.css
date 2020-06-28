@@ -11,11 +11,24 @@ section h1{
 
 }
 .former{
-
+  min-height: 60vh;
   display: flex;
   justify-content: center;
-  height: 80%;
   align-items: center;
+}
+.former form{
+  margin-top: 50px;
+}
+.entrada span{
+  width: 700px;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+.former form input, .former form textarea{
+  width: 50vw !important;
+  background-color: white;
+  border: none;
+  border-radius:7px;
 }
 .newDonation{
   text-align: center;
@@ -23,18 +36,11 @@ section h1{
 .top{
   margin-left: 22%;
 }
-input{
-  background-color: white;
-  border: none;
-  border-radius: 7px;
-  width: 120%;
-}
-textarea{
-  background-color: white;
-  border: none;
-  border-radius: 7px;
-  padding: 50px;
-  width: 120%;
+.entrada{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .paypal{
   display: flex;

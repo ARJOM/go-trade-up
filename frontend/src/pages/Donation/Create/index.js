@@ -17,14 +17,14 @@ export default function CreateDonation(){
     return (
         <div className="donate-container">
             <div className="newDonation">
-                <section className="title">
-                    <h1>  Nova Doação </h1>
+                <section>
+                    <h1> Nova Doação </h1>
                 </section>
             </div>
 
             <section className="former">
                 <form>
-                    <section className="inputs">
+                    <section className="entrada">
                     <span>Valor da doação:</span>
 
                         <label for="Valor">
