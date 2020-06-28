@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import PrivateRoute from "./utils/PrivateRoute";
 
 // Customer
 import CreateCustomer from "./pages/Customers/Create";
@@ -37,21 +38,22 @@ export default function Routes() {
                 <Route path="/" exact component={Home} />
                 <Route path="/create/market" component={CreateMarket} />
                 <Route path="/create/user" component={CreateCustomer} />
-                <Route path="/list/products" component={ListMarketProducts} />
-                <Route path="/create/donation" component={CreateDonation} />
+                <Route path="/list/publication" component={ListPublication} />
 
-                {/*Administration routes */}
-                <Route path="create/product" component={CreateProduct} />
-                <Route path="/edit/product" component={EditProduct} />
-                <Route path="/edit/user" component={EditCustomer} />
-                <Route path="/edit/market" component={EditMarket} />
-                <Route path="/list/markets" component={ListMarket} />
-               <Route path="/list/products" component={ListProducts} />
-               <Route path="/list/publication" component={ListPublication} />
-                {/*Error route*/}
+                {/*Authenticated routes*/}
+                <PrivateRoute path="/list/products" component={ListProducts} />
+                <PrivateRoute path="/create/donation" component={CreateDonation} />
 
-                {/*Rotas dos devs*/}
-                <Route path="create/publication" component={CreatePublication} />
+                {/*Market routes */}
+                <PrivateRoute path="create/product" component={CreateProduct} />
+                <PrivateRoute path="/edit/product/:id" component={EditProduct} />
+                <PrivateRoute path="/edit/user" component={EditCustomer} />
+                <PrivateRoute path="/edit/market" component={EditMarket} />
+                <PrivateRoute path="/list/markets" component={ListMarket} />
+                <PrivateRoute path="/list/products/:id" component={ListMarketProducts} />
+
+                {/*Admin routes*/}
+                <PrivateRoute path="create/publication" component={CreatePublication} />
 
                 {/*Error route*/}
                 <Route path="*" component={NotFound}/>
