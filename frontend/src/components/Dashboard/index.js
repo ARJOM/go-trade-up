@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
+import {Link, BrowserRouter} from "react-router-dom";
 import logo from '../../assets/logo.png';
 import './styles.css';
 
@@ -10,6 +10,7 @@ export default function Dashboard(props){
 
     // Dashboard renderizado
     return(
+        <BrowserRouter>
         <div className="container">
 
         <div className="dashboard">
@@ -49,6 +50,6 @@ export default function Dashboard(props){
         </div>
 
         </div>
-
+        </BrowserRouter>
     )
 }
