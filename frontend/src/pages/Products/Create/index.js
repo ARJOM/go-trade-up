@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './style.css';
 
 export default function CreateProduct(){
+
+    const [name, setName] = useState("");
+    const [preco, setPreco] = useState("");
+    const [foto, setFoto] = useState("");
+    const [descricao, setDescricao] = useState("");
 
     async function handleSubmit(){
         const data = {
@@ -10,7 +14,6 @@ export default function CreateProduct(){
             price: preco,
             photo: foto,
             description: descricao,
-            quantity: quantidade,
         }
     }
 
@@ -40,9 +43,9 @@ export default function CreateProduct(){
                             <input type="image" src="" alt="No Images Available" > </input>
                         </label>
 
-                        <label for="Quantidade">
-                            Quantidade:
-                            <input type="number" className="break" className="req" placeholder="Quantidade" min="1" value={quantidade} onChange={text=>setQuantidade(text.target.value)}></input>
+                        <label for="Descricao">
+                            Descricao:
+                            <input type="text" className="break" className="req" placeholder="Quantidade" min="1" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
                         </label>
                     </section>
 

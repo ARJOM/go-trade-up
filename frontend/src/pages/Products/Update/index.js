@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './style.css';
 
 export default function EditProduct(){
+
+    const [name, setName] = useState("");
+    const [preco, setPreco] = useState("");
+    const [foto, setFoto] = useState("");
+    const [descricao, setDescricao] = useState("");
 
     async function handleSubmit(){
         const data = {
             name: name,
             price: preco,
             photo: foto,
-            description: descricao,
-            quantity: quantidade
+            description: descricao
         }
     }
 
@@ -45,10 +48,6 @@ export default function EditProduct(){
                             <input type="text" className="nbreak" placeholder="Nova descricao" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
                         </label>
 
-                        <label for="Nova quantidade">
-                            Nova quantidade:
-                            <input type="number" className="break" placeholder="Nova quantidade" min="1" value={quantidade} onChange={text=>setQuantidade(text.target.value)}></input>
-                        </label>
                     </section>
 
                     <input type="submit" value="Alterar"></input>
