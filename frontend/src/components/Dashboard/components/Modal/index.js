@@ -82,7 +82,7 @@ export default function UserModal() {
 
                             <section className="buttons">
 
-                                <button className="btn-cancel">
+                                <button className="btn-cancel" onClick={() => localStorage.removeItem('token')}>
                                     Sair
                                 </button>
 
