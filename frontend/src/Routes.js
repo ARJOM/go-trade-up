@@ -30,9 +30,14 @@ import Home from "./pages/Home";
 // Not Found
 import NotFound from "./pages/NotFound";
 
+// General
+import Dashboard from "./components/Dashboard";
+import Foooter from "./components/Foooter";
+
 export default function Routes() {
     return (
         <BrowserRouter>
+            <Dashboard>
             <Switch>
                 {/*General routes*/}
                 <Route path="/" exact component={Home} />
@@ -45,19 +50,21 @@ export default function Routes() {
                 <PrivateRoute path="/create/donation" component={CreateDonation} />
 
                 {/*Market routes */}
-                <PrivateRoute path="create/product" component={CreateProduct} />
+                <PrivateRoute path="/create/product" component={CreateProduct} />
                 <PrivateRoute path="/edit/product/:id" component={EditProduct} />
                 <PrivateRoute path="/edit/user" component={EditCustomer} />
                 <PrivateRoute path="/edit/market" component={EditMarket} />
                 <PrivateRoute path="/list/markets" component={ListMarket} />
-                <PrivateRoute path="/list/products/:id" component={ListMarketProducts} />
+                <PrivateRoute path="/products" component={ListMarketProducts} />
 
                 {/*Admin routes*/}
-                <PrivateRoute path="create/publication" component={CreatePublication} />
+                <PrivateRoute path="/create/publication" component={CreatePublication} />
 
                 {/*Error route*/}
                 <Route path="*" component={NotFound}/>
             </Switch>
+            </Dashboard>
+            <Foooter/>
         </BrowserRouter>
     )
 }
