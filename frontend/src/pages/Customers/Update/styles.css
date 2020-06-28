@@ -1,0 +1,36 @@
+.editContainer{
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.formulario input{
+  text-align: start !important;
+}
+.butttons{
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+}
+.butttons button{
+  max-width: 30%;
+  border-radius: 7px;
+  color: black;
+  font-size: 1.2em;
+}
+.butttons button:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+.btn-conclui{
+  background-color: darkgreen !important;
+}
+
+
+
+
+
+.btn-excluir{
+  background-color: red !important;
+}

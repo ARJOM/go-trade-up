@@ -1,46 +1,51 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './style.css';
+import './styles.css';
 
 export default function EditCustomer(){
+        const [name, setName] = useState();
+        const [email, setEmail] = useState();
+        const [senha, setSenha] = useState();
+
 
     async function handleSubmit(){
         const data = {
-            user_name: nome,
+            user_name: name,
             email: email,
             password: senha
         }
     }
 
     return (
-        <div>
-            <div className="top">
-                <section className="title">
+        <div className="editContainer">
+            <div>
+                <section className="topo">
                     <h1> Editar Dados - Cliente </h1>
                 </section>
             </div>
 
-            <section className="form">
+            <section className="formulario">
                 <form>
                     <section className="inputs">
                         <label for="Novo nome">
                             Altere seu nome:
-                            <input type="text" className="nbreak" placeholder="Novo nome" value={nome} onChange={text=>setNome(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="exemplo: Marcos Vinicius" value={name} onChange={text=>setName(text.target.value)}></input>
                         </label>
 
                         <label for="Novo e-mail">
                             Altere seu e-mail:
-                            <input type="text" className="nbreak" placeholder="Novo e-mail" value={email} onChange={text=>setEmail(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="exemplo: email@gmail.com" value={email} onChange={text=>setEmail(text.target.value)}></input>
                         </label>
 
                         <label for="Nova senha">
                             Altere sua senha:
-                            <input type="text" className="nbreak" placeholder="Nova senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
+                            <input type="password" className="nbreak" placeholder="Nova senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
                         </label>
                     </section>
-                    <input type="submit" value="Editar Dados"></input>
 
-                    <section className="buttons">
+                  
+                </form>
+                <section className="butttons">
                         <button className="btn-cancel">
                             Cancelar
                         </button>
@@ -49,12 +54,10 @@ export default function EditCustomer(){
                             Excluir Usuario
                         </button>
 
-                        <button onClick={handleSubmit} className="btn-concluir">
+                        <button onClick={handleSubmit} className="btn-conclui">
                             Salvar Alteracoes
                         </button>
-
                     </section>
-                </form>
             </section>
         </div>
     )
