@@ -46,7 +46,7 @@ export default function Routes() {
                 <Route path="/list/publication" component={ListPublication} />
 
                 {/*Authenticated routes*/}
-                <PrivateRoute path="/list/products" component={ListProducts} />
+                <PrivateRoute path="/list/products/:market" component={ListProducts} />
                 <PrivateRoute path="/create/donation" component={CreateDonation} />
 
                 {/*Market routes */}

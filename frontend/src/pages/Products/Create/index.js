@@ -1,21 +1,41 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './styles.css';
+import Pictures from "../../../services/Pictures";
 
 export default function CreateProduct(){
-        const [name, setName] = useState();
-        const [price, setPrice] = useState();
-        const [photo, setPhoto] = useState();
-        const [description, setDescription] = useState();
-        const [quantity, setQuantity] = useState();
 
-    async function handleSubmit(){
+    const [name, setName] = useState("");
+    const [preco, setPreco] = useState("");
+    const [foto, setFoto] = useState(null);
+    const [descricao, setDescricao] = useState("");
+
+    async function handleSubmit(e){
+        e.preventDefault();
+
+        const token = localStorage.getItem("token");
+        const email = localStorage.getItem("email");
+
+        const picture = await Pictures.upload({path: 'products', uid: email, file_name: name, file: foto});
+
         const data = {
-            name,
-            price ,
-            photo,
-            description,
-            quantity,
+            market: email,
+            product_name: name,
+            price: preco,
+            photo: picture,
+            description: descricao,
+        };
+
+        try {
+            const response = await api.post('products', data, {
+                headers: {
+                    'x-access-token': token
+                }
+            });
+            alert("Produto cadastrado");
+
+        } catch (err) {
+            console.log(err);
+            alert("Falha ao registrar produto")
         }
     }
 
@@ -28,7 +48,7 @@ export default function CreateProduct(){
             </div>
 
             <section className="form">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <section className="inputs">
                         <label>
                             Nome do produto:
@@ -42,23 +62,21 @@ export default function CreateProduct(){
 
                         <label>
                             Foto:
-                            <input type="image" src="" alt="No Images Available" value={photo} onChange={e=> setPhoto(e.target.value)} />
+                            <input type="file" src="" alt="No Images Available" onChange={e => setFoto(e.target.files[0])}/>
                         </label>
 
-                        <label>
-                            Quantidade:
-                            <input type="number" className="req" placeholder="Quantidade" min="1" value={quantity} onChange={text=>setQuantity(text.target.value)}/>
+                        <label for="Descricao">
+                            Descricao:
+                            <input type="text" className="break" className="req" placeholder="Quantidade" min="1" value={descricao} onChange={text => setDescricao(text.target.value)}/>
                         </label>
                     </section>
-
-                    <input type="submit" value="Alterar"></input>
 
                     <section>
                         <button className="btn-cancel">
                             Cancelar
                         </button>
 
-                        <button onClick={handleSubmit} className="btn-concluir">
+                        <button className="btn-concluir">
                             Salvar Alteracoes
                         </button>
 

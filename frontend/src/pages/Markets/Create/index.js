@@ -21,9 +21,9 @@ export default function CreateMarket(){
             city: cidade,
             address: endereco,
             telephone: telefone
-        }
+        };
         try{
-            const response = await api.post('users', data);
+            const response = await api.post('markets', data);
             alert('Cadastro de Comerciante realizado com sucesso!');
         }catch(err){
             alert('Erro no cadastro. Tente novamente.', err)
