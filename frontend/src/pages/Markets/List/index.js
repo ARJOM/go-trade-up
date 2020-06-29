@@ -1,8 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import api from '../../../services/api';
 import './styles.css';
 
 export default function ListMarket(){
+    const [markets, setMarkets] = useState([]);
+
+    useEffect(() => {
+        api.get('markets')
+            .then(response => {setMarkets(response.data); console.log(response.data)})
+            .catch(err => alert("Erro ao carregar comerciantes"))
+    }, []);
 
     return (
         <div className="listMarket">
@@ -13,21 +20,21 @@ export default function ListMarket(){
             </div>
 
             <div className="content">
-            <section className="dados">
-                <p><darker>Comércio: </darker>Ricart Drogaria</p>
-                <p><darker>Local de atuação:</darker>Uraúna - PB</p>
-            </section>
+                {markets.map(market => (
+                    <React.Fragment  key={market.email}>
+                        <section className="dados">
+                            <p><darker>Comércio: </darker>{market.user_name}</p>
+                            <p><darker>Local de atuação: </darker>{market.city} - {market.uf}</p>
+                        </section>
+                        <section className="buttons">
+                            <button className="btn-listprd">Ver Produtos </button>
 
-            <section className="buttons">
-                <button className="btn-listprd">Ver Produtos </button>
-
-                <button className="btn-contact"> Entrar em Contato </button>
-            </section>
-
+                            <button className="btn-contact"> Entrar em Contato </button>
+                        </section>
+                    </React.Fragment>
+                ))}
             </div>
 
-
-         
         </div>
     )
 }
