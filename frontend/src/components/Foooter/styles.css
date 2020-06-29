@@ -17,3 +17,11 @@
   border-radius: 7px;
   margin-bottom: 3vh;
 }
+.btn-concluir a{
+  background: none;
+  font-size: 1em;
+  font-weight: 400;
+}
+.btn-concluir a:hover{
+  opacity: 0.7;
+}
