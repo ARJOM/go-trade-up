@@ -1,0 +1,14 @@
+.back{
+  background-color: #CCDBDC;
+}
+.titlle{
+  width: 100%;
+  text-align: center;
+}
+.autentication{
+  color: red;
+  font-style: italic;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}

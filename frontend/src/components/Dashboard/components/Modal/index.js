@@ -3,6 +3,7 @@ import { Modal } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade'
+import './style.css'
 
 import Login from "../Login";
 import {isAuthenticated} from "../../../../utils/auth";
@@ -77,7 +78,7 @@ export default function UserModal() {
                 >
                 <Fade in={open}>
                     <div style={modalStyle} className={classes.paper}>
-                        <h2 id="title"> Entre em GoTradeUp com seus dados</h2>
+                        <h2 className="title"> Entre e</h2>
                         <section className="modal-form">
 
                             <section className="buttons">
@@ -119,13 +120,16 @@ export default function UserModal() {
             >
                 <Fade in={open}>
                     <div style={modalStyle} className={classes.paper}>
-                        <h2 id="title"> Entre em GoTradeUp com seus dados</h2>
-                        <h4 id="form-body">
+                        <div  className="back">
+
+                        <h2 className="titlle"> Entre em GoTradeUp </h2>
+                        <h4 className="autentication">
                             *Todos os campos deste formulário são obrigatórios!
                         </h4>
-                        <section className="modal-form">
+                        <section>
                             <Login/>
                         </section>
+                        </div>
                     </div>
                 </Fade>
 
