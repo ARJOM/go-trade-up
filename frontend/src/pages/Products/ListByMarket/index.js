@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './style.css';
+import './style.css'
 
 export default function ListMarketProducts(){
     function alerta(e){
@@ -26,6 +26,7 @@ export default function ListMarketProducts(){
                     </section>
                     <button className="btn-editar">Editar Produto</button>
                 </div>
+                
             </section>
             <section className="direita">
                 <img onClick={alerta} src="https://cdn.pixabay.com/photo/2012/04/02/16/07/plus-24844__340.png" />

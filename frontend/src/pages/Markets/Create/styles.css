@@ -9,6 +9,7 @@
   font-size: 1em !important;
 }
 .formulario{
+  margin-top: 50px;
   width: 70vw !important;
   display: flex;
   justify-content: center;

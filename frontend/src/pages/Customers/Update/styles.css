@@ -5,13 +5,19 @@
   align-items: center;
   flex-direction: column;
 }
+
 .formulario input{
   text-align: start !important;
+  background-color: white;
+  border: none;
+  border-radius: 7px;
+  margin: 10px;
 }
 .butttons{
   display: flex;
   width: 60vw;
   justify-content: space-between;
+  margin-top: 120px;
 }
 .butttons button{
   max-width: 30%;

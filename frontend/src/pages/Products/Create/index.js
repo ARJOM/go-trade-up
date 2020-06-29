@@ -1,19 +1,41 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './styles.css';
+import Pictures from "../../../services/Pictures";
 
 export default function CreateProduct(){
-        const [name, setName] = useState();
-        const [price, setPrice] = useState();
-        const [photo, setPhoto] = useState();
-        const [description, setDescription] = useState();
 
-    async function handleSubmit(){
+    const [name, setName] = useState("");
+    const [preco, setPreco] = useState("");
+    const [foto, setFoto] = useState(null);
+    const [descricao, setDescricao] = useState("");
+
+    async function handleSubmit(e){
+        e.preventDefault();
+
+        const token = localStorage.getItem("token");
+        const email = localStorage.getItem("email");
+
+        const picture = await Pictures.upload({path: 'products', uid: email, file_name: name, file: foto});
+
         const data = {
-            name,
-            price ,
-            photo,
-            description,
+            market: email,
+            product_name: name,
+            price: preco,
+            photo: picture,
+            description: descricao,
+        };
+
+        try {
+            const response = await api.post('products', data, {
+                headers: {
+                    'x-access-token': token
+                }
+            });
+            alert("Produto cadastrado");
+
+        } catch (err) {
+            console.log(err);
+            alert("Falha ao registrar produto")
         }
     }
 
@@ -35,17 +57,18 @@ export default function CreateProduct(){
                         Preço do produto:
 
                         <label>
-                            <input type="text" placeholder="Preço" value={price} onChange={text=>setPrice(text.target.value)}/>
+                            <input type="text" placeholder="Preço" value={preco} onChange={text=>setPreco(text.target.value)}/>
                         </label>
                         Foto:
 
                         <label>
-                            <input type="file" alt="No Images Available" value={photo} onChange={e=> setPhoto(e.target.value)} />
+                            Foto:
+                            <input type="file" src="" alt="No Images Available" onChange={e => setFoto(e.target.files[0])}/>
                         </label>
                             Descrição:
 
                         <label>
-                            <textarea type="text"  placeholder="Descrição" value={description} onChange={text=>setDescription(text.target.value)}/>
+                            <textarea type="text"  placeholder="Descrição" value={descricao} onChange={text=>setDescricao(text.target.value)}/>
                         </label>
                     </section>
 

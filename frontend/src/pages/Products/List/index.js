@@ -1,32 +1,61 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useParams} from "react-router-dom";
 import api from '../../../services/api';
-import './style.css';
 
 export default function ListProducts(){
+    const [products, setProducts] = useState([]);
+    const [name, setName] = useState("");
+
+    const { market } = useParams();
+
+    const token = localStorage.getItem('token');
+
+    useEffect(() => {
+        api.get(`markets/${market}/products/`, {
+            headers: {
+                'x-access-token': token
+            }
+        })
+            .then(response => setProducts(response.data))
+            .catch(err => alert("Erro ao carregar produtos"));
+        api.get(`markets/${market}`, {
+            headers: {
+                'x-access-token': token
+            }
+        })
+            .then(response => setName(response.data.user_name))
+            .catch(err => alert("Erro ao carregar nome de comercio"));
+    }, [market, token]);
 
     return (
         <div className="container-products">
             <div>
-                <section>
-                    <h1> Produtos do COMERCIANTE </h1>
+                <section >
+                    <h1>  Produtos de {name} </h1>
                 </section>
             </div>
 
-            <div className="card">
-                    <section className="imagem-product">
-                        <img src="https://pfarma.com.br/images/stories/rivotril-medicamento-controlado.jpg" />
-                        <section className="details">
-                        <p><b>Nome:</b>Clonazepam</p> <br />
-                            <p><b>Descrição</b>Mussum Ipsum, cacilds vidis litro abertis. 
-                            Quem num gosta di mim que vai caçá sua turmis! Mé faiz elementum girarzis,
-                             nisi eros vermeio. Leite de capivaris, leite de mula manquis sem cabeça. 
-                             Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus....</p>
-                             <button className="btn-editar">Editar Produto</button>
-                             <p className="pricee">Preço atual: R$ 15,50</p>
-                        </section>
-                       
-                    </section>
-                </div>
+            <section>
+                {products.map(product => (
+                <React.Fragment>
+                        <div  className="card">
+                            <section className="imagem-product"> 
+                                    <img src={product.photo} />
+                                <section className="details"> 
+                                    <section className="detail-text">
+                                        <p><b>Título:</b>{product.product_name}</p>
+                                        <p><b>Descrição:</b>{product.description}</p>
+                                    </section>
+                                    <section>
+                                    <button className="btn-editar"><a href="https://api.whatsapp.com/send?phone=558383613615"><p>Entre em contato</p></a></button>
+                                    <p  className="pricee"><b>Preço</b>{product.price}</p>
+                                    </section>
+                                </section>
+                            </section>
+                        </div>
+            </React.Fragment>
+                ))}
+            </section>
 
         </div>
     )
