@@ -37,7 +37,6 @@ export default function ListProducts(){
 
             <section>
                 {products.map(product => (
-                <React.Fragment>
                         <div  className="card">
                             <section className="imagem-product"> 
                                     <img src={product.photo} />
@@ -53,7 +52,6 @@ export default function ListProducts(){
                                 </section>
                             </section>
                         </div>
-            </React.Fragment>
                 ))}
             </section>
 
