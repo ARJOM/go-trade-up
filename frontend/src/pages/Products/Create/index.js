@@ -1,16 +1,21 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './style.css';
+import './styles.css';
 
 export default function CreateProduct(){
+        const [name, setName] = useState();
+        const [price, setPrice] = useState();
+        const [photo, setPhoto] = useState();
+        const [description, setDescription] = useState();
+        const [quantity, setQuantity] = useState();
 
     async function handleSubmit(){
         const data = {
-            name: name,
-            price: preco,
-            photo: foto,
-            description: descricao,
-            quantity: quantidade,
+            name,
+            price ,
+            photo,
+            description,
+            quantity,
         }
     }
 
@@ -25,24 +30,24 @@ export default function CreateProduct(){
             <section className="form">
                 <form>
                     <section className="inputs">
-                        <label for="Nome">
+                        <label>
                             Nome do produto:
-                            <input type="text" className="nbreak" className="req" placeholder="Nome" value={name} onChange={text=>setName(text.target.value)}></input>
+                            <input type="text" className="nbreak" className="req" placeholder="Nome" value={name} onChange={text=>setName(text.target.value)}/>
                         </label>
 
-                        <label for="Preco">
-                            Preco do produto:
-                            <input type="text" className="break" className="req" placeholder="Preco" value={preco} onChange={text=>setPreco(text.target.value)}></input>
+                        <label>
+                            Preço do produto:
+                            <input type="text" className="break" className="req"value={price} onChange={text=>setPrice(text.target.value)}/>
                         </label>
 
-                        <label for="Foto">
+                        <label>
                             Foto:
-                            <input type="image" src="" alt="No Images Available" > </input>
+                            <input type="image" src="" alt="No Images Available" value={photo} onChange={e=> setPhoto(e.target.value)} />
                         </label>
 
-                        <label for="Quantidade">
+                        <label>
                             Quantidade:
-                            <input type="number" className="break" className="req" placeholder="Quantidade" min="1" value={quantidade} onChange={text=>setQuantidade(text.target.value)}></input>
+                            <input type="number" className="req" placeholder="Quantidade" min="1" value={quantity} onChange={text=>setQuantity(text.target.value)}/>
                         </label>
                     </section>
 

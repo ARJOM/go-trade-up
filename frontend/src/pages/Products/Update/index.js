@@ -4,13 +4,19 @@ import './style.css';
 
 export default function EditProduct(){
 
+    const [name, setName] = useState();
+    const [price, setPrice] = useState();
+    const [photo, setPhoto] = useState();
+    const [description, setDescription] = useState();
+    const [quantity, setQuantity] = useState();
+
     async function handleSubmit(){
         const data = {
-            name: name,
-            price: preco,
-            photo: foto,
-            description: descricao,
-            quantity: quantidade
+            name,
+            price,
+            photo,
+            description,
+            quantity
         }
     }
 
@@ -32,22 +38,22 @@ export default function EditProduct(){
 
                         <label for="Novo preco">
                             Novo preco do produto:
-                            <input type="text" className="break" placeholder="Novo preco" value={preco} onChange={text=>setPreco(text.target.value)}></input>
+                            <input type="text" className="break" placeholder="Novo preco" value={price} onChange={text=>setPrice(text.target.value)}></input>
                         </label>
 
                         <label for="Nova foto">
                             Nova foto:
-                            <input type="image" className="nbreak" src="" alt="No Images Available" > </input>
+                            <input type="image" className="nbreak" src="" alt="No Images Available" value={photo} onChange={e=>setPhoto(e.target.value)} />
                         </label>
 
                         <label for="Nova descricao">
                             Nova descricao:
-                            <input type="text" className="nbreak" placeholder="Nova descricao" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Nova descricao" value={description} onChange={text=>setDescription(text.target.value)}></input>
                         </label>
 
                         <label for="Nova quantidade">
                             Nova quantidade:
-                            <input type="number" className="break" placeholder="Nova quantidade" min="1" value={quantidade} onChange={text=>setQuantidade(text.target.value)}></input>
+                            <input type="number" className="break" placeholder="Nova quantidade" min="1" value={quantity} onChange={text=>setQuantity(text.target.value)}></input>
                         </label>
                     </section>
 
