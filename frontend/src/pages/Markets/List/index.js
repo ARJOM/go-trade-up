@@ -8,7 +8,7 @@ export default function ListMarket(){
         <div className="listMarket">
             <div>
                 <section>
-                    <h1 className="titulo"> Comerciantes </h1>
+                    <h1> Comerciantes </h1>
                 </section>
             </div>
 

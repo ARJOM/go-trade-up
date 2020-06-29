@@ -11,6 +11,7 @@
   top: 20px;
 }
 .content{
+  margin: 20px;
   background-color: #ACC5C6 !important;
   width: 40vw;
   height: 25vh;
@@ -35,6 +36,8 @@ background: none;
   width: 100%;
   justify-content: space-around;
   display: flex;
+  justify-content: space-around !important;
+  margin-bottom: 5px;
 }
 .buttons button{
   border-radius: 7px;
