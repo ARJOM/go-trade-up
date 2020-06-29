@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../../../services/api';
 import './styles.css';
 
 export default function ListMarket(){
     const [markets, setMarkets] = useState([]);
+
+    const history = useHistory();
 
     useEffect(() => {
         api.get('markets')
@@ -27,7 +30,7 @@ export default function ListMarket(){
                             <p><darker>Local de atuação: </darker>{market.city} - {market.uf}</p>
                         </section>
                         <section className="buttons">
-                            <button className="btn-listprd">Ver Produtos </button>
+                            <button className="btn-listprd" onClick={() => history.push(`/list/products/${market.email}`)}>Ver Produtos </button>
 
                             <button className="btn-contact"> Entrar em Contato </button>
                         </section>
