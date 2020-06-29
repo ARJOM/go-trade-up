@@ -1,0 +1,61 @@
+.container-edit{
+  min-height: 80vh;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+.tituloo{
+  text-align: center;
+}
+.inputes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 60vh;
+}
+.inputes input{
+  color: black !important;
+  border: none;
+  background-color: white;
+  width: 40vw;
+  border-radius: 7px;
+  padding: 14px;
+}
+.inputes textarea{
+  min-width: 40vw;
+}
+
+.botooes{
+  width: 70vw;
+  position: relative;
+  right: 230px;
+  display: flex;
+  justify-content: space-around;
+}
+.btn-conclu{
+  background-color: darkgreen !important;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  border-radius:7px;
+  width: 15vw;
+  height: 8vh;
+}
+.btn-exclui{
+    background-color: red !important;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    border-radius:7px;
+    width: 15vw;
+    height: 8vh;
+}
+.btn-cancelar{
+    background-color: darkorange !important;
+    color: black !important;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    border-radius:7px;
+    width: 15vw;
+    height: 8vh;
+}

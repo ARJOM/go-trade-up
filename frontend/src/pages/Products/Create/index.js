@@ -7,7 +7,6 @@ export default function CreateProduct(){
         const [price, setPrice] = useState();
         const [photo, setPhoto] = useState();
         const [description, setDescription] = useState();
-        const [quantity, setQuantity] = useState();
 
     async function handleSubmit(){
         const data = {
@@ -15,51 +14,48 @@ export default function CreateProduct(){
             price ,
             photo,
             description,
-            quantity,
         }
     }
 
     return (
         <div>
-            <div className="top">
-                <section className="title">
-                    <h1> Cadastrar Novo Produtos </h1>
+            <div>
+                <section>
+                    <h1 className="tituloo"> Cadastrar Novo Produtos </h1>
                 </section>
             </div>
 
             <section className="form">
                 <form>
-                    <section className="inputs">
+                    <section className="inputes">
+                    Nome do produto:
                         <label>
-                            Nome do produto:
-                            <input type="text" className="nbreak" className="req" placeholder="Nome" value={name} onChange={text=>setName(text.target.value)}/>
+                            <input type="text" placeholder="Nome" value={name} onChange={text=>setName(text.target.value)}/>
                         </label>
+                        Preço do produto:
 
                         <label>
-                            Preço do produto:
-                            <input type="text" className="break" className="req"value={price} onChange={text=>setPrice(text.target.value)}/>
+                            <input type="text" placeholder="Preço" value={price} onChange={text=>setPrice(text.target.value)}/>
                         </label>
+                        Foto:
 
                         <label>
-                            Foto:
-                            <input type="image" src="" alt="No Images Available" value={photo} onChange={e=> setPhoto(e.target.value)} />
+                            <input type="file" alt="No Images Available" value={photo} onChange={e=> setPhoto(e.target.value)} />
                         </label>
+                            Descrição:
 
                         <label>
-                            Quantidade:
-                            <input type="number" className="req" placeholder="Quantidade" min="1" value={quantity} onChange={text=>setQuantity(text.target.value)}/>
+                            <textarea type="text"  placeholder="Descrição" value={description} onChange={text=>setDescription(text.target.value)}/>
                         </label>
                     </section>
 
-                    <input type="submit" value="Alterar"></input>
-
                     <section>
-                        <button className="btn-cancel">
+                        <button className="btn-cancelar">
                             Cancelar
                         </button>
 
                         <button onClick={handleSubmit} className="btn-concluir">
-                            Salvar Alteracoes
+                            Adicionar Produto
                         </button>
 
                     </section>

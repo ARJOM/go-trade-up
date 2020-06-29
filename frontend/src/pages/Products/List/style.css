@@ -1,0 +1,45 @@
+.container-products{
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.card{
+  margin:50px;
+  display: flex;
+  width: 55%;
+  flex-direction: column;
+  background-color: white;
+}
+.imagem-product{
+  background-color: white;
+  display: flex;
+  height: 100%;
+}
+.details b{
+  background-color: white;
+}
+.details{
+  margin-top: 20px;
+  min-height: 40vh;
+  background-color: white;
+  max-width: 40%;
+}
+.pricee{
+  color: rgb(5, 228, 5);
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.btn-editar{
+  background-color: rgb(12, 180, 12) !important;
+  padding: 2px 5px 2px 5px;
+  border: none;
+  border-radius:2px;
+  width: 13vw;
+  height: 5vh;
+  margin: 10px;
+}
+.btn-editar:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
