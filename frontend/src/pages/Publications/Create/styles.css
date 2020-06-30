@@ -1,7 +1,7 @@
-.inputs{
+.inpute{
   width: 40vw !important;
-  height: 40vh;
-  margin-top: 60px;
+  height: 50vh !important;
+  margin-top: 120px;
 }
 .container-transparencia{
   height: 80vh;
@@ -16,10 +16,10 @@
   border: none;
 }
 .Descricao span{
-  font-weight: 400;
+  font-weight: 700;
   position: relative;
   bottom: 20px;
-  font-size: 1.5em;
+  font-size: 1.7em;
 }
 .buttons{
   align-items: center;

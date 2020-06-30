@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import api from '../../../services/api';
 import './styles.css';
 
@@ -7,6 +7,13 @@ export default function EditCustomer(){
         const [email, setEmail] = useState();
         const [senha, setSenha] = useState();
 
+        useEffect(()=>{
+            const userEmail = localStorage.getItem('email')
+            console.log('EMAIL: ', userEmail)
+            api.get(`users/${userEmail}`).then(respose =>{
+                console.log(respose.data);
+            })
+        }, [])
 
     async function handleSubmit(){
         const data = {
@@ -20,7 +27,7 @@ export default function EditCustomer(){
         <div className="editContainer">
             <div>
                 <section className="topo">
-                    <h1> Editar Dados - Cliente </h1>
+                    <h1>     Editar Dados - Cliente </h1>
                 </section>
             </div>
 

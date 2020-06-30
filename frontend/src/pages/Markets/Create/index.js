@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import api from '../../../services/api';
 import './styles.css';
 
 export default function CreateMarket(){
+    const history = useHistory();
 
     const [nome, setName] = useState();
     const [email, setEmail] = useState();
@@ -12,61 +14,65 @@ export default function CreateMarket(){
     const [endereco, setEndereco] = useState();
     const [telefone, setTelefone] = useState();
 
-    async function handleSubmit(){
+    async function handleSubmit(e){
+        e.preventDefault();
         const data = {
             user_name: nome,
             email: email,
             password: senha,
-            state: estado,
+            uf: estado,
             city: cidade,
             address: endereco,
-            telephone: telefone
+            phone: telefone
         };
+        console.log(data);
         try{
             const response = await api.post('markets', data);
             alert('Cadastro de Comerciante realizado com sucesso!');
+            alert('Realize login clicando no canto superior direito da tela.')
+            history.push('/');
         }catch(err){
-            alert('Erro no cadastro. Tente novamente.', err)
+            console.log('DEU RUIM  no cadastro. Tente novamente.', err)
         }
     }
 
     return(
         <div className="container-market">
             <div>
-                <section className="titulo">
+                <section>
                     <h1>Cadastrar-se como Comerciante</h1>
                 </section>
             </div>
 
             <section className="formulario">
                 <form type="submit">
-                    <section class="inputs">
+                    <section className="inputes">
                         <label for="Nome">
-                            <input type="text"className="req" placeholder="Nome" value={nome} onChange={text=>setName(text.target.value)}></input>
+                            <input type="text" placeholder="Nome" value={nome} onChange={text=>setName(text.target.value)} />
                         </label>
 
                         <label for="Email">
-                            <input type="text" className="nbreak" className="req" placeholder="E-mail" value={email} onChange={text=>setEmail(text.target.value)} ></input>
+                            <input type="text" placeholder="E-mail" value={email} onChange={text=>setEmail(text.target.value)} />
                         </label>
 
                         <label for="Senha">
-                            <input type="text" className="req" placeholder="Senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
+                            <input type="password" placeholder="Senha" value={senha} onChange={text=>setSenha(text.target.value)}/>
                         </label>
 
                         <label for="Estado">
-                            <input type="text" className="break" className="req" placeholder="Estado" value={estado} onChange={text=>setEstado(text.target.value)}></input>
+                            <input type="text" placeholder="Estado" value={estado} onChange={text=>setEstado(text.target.value)}/>
                         </label>
 
                         <label for="Cidade">
-                            <input type="text" className="break" className="req" placeholder="Cidade" value={cidade} onChange={text=>setCidade(text.target.value)}></input>
+                            <input type="text" placeholder="Cidade" value={cidade} onChange={text=>setCidade(text.target.value)}/>
                         </label>
 
                         <label for="Endereco">
-                            <input type="text" className="nbreak" className="req" placeholder="Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}></input>
+                            <input type="text" placeholder="Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}/>
                         </label>
 
                         <label for="Telefone">
-                            <input type="text" className="break" className="req" placeholder="Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}></input>
+                            <input type="text"  placeholder="Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}/>
                         </label>
 
                     </section>

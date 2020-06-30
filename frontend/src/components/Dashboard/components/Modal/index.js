@@ -1,8 +1,10 @@
 import React, {useState} from "react";
+import {useHistory} from 'react-router-dom';
 import { Modal } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade'
+import './style.css'
 
 import Login from "../Login";
 import {isAuthenticated} from "../../../../utils/auth";
@@ -44,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function UserModal() {
+    const history = useHistory();
     // Modasl states
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
@@ -77,17 +80,22 @@ export default function UserModal() {
                 >
                 <Fade in={open}>
                     <div style={modalStyle} className={classes.paper}>
-                        <h2 id="title"> Entre em GoTradeUp com seus dados</h2>
+                        <h2 className="titlle"> Bem vindo ao GoTradeUp!</h2>
                         <section className="modal-form">
 
                             <section className="buttons">
 
-                                <button className="btn-cancel" onClick={() => localStorage.removeItem('token')}>
-                                    Sair
+                                <button className="btn-cancell" onClick={() => {
+                                    localStorage.removeItem('token')
+                                    history.push('/')
+                                    }}>
+                                        Sair
                                 </button>
 
                                 <button className="btn-concluir">
-                                    <a href=""> Minha Conta </a>
+                                    <a onClick={ ()=>{
+                                        history.push('/edit/user')
+                                    }}> Alterar Meus Dados </a>
                                 </button>
                             </section>
                         </section>
@@ -119,13 +127,16 @@ export default function UserModal() {
             >
                 <Fade in={open}>
                     <div style={modalStyle} className={classes.paper}>
-                        <h2 id="title"> Entre em GoTradeUp com seus dados</h2>
-                        <h4 id="form-body">
+                        <div  className="back">
+
+                        <h2 className="titlle"> Entre em GoTradeUp </h2>
+                        <h4 className="autentication">
                             *Todos os campos deste formulário são obrigatórios!
                         </h4>
-                        <section className="modal-form">
+                        <section>
                             <Login/>
                         </section>
+                        </div>
                     </div>
                 </Fade>
 

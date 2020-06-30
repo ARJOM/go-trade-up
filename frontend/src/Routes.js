@@ -21,8 +21,8 @@ import ListPublication from "./pages/Publications/List";
 // Product
 import CreateProduct from "./pages/Products/Create";
 import EditProduct from "./pages/Products/Update";
-import ListMarketProducts from "./pages/Products/ListByMarket";
-import ListProducts from "./pages/Products/List";
+import ListProducts from "./pages/Products/ListByMarket";
+import ListMarketProducts from "./pages/Products/List";
 
 // Home
 import Home from "./pages/Home";
@@ -41,7 +41,7 @@ export default function Routes() {
             <Switch>
                 {/*General routes*/}
                 <Route path="/" exact component={Home} />
-                <Route path="/create/market" component={CreateMarket} />
+                <Route path="/create/market" exact component={CreateMarket} />
                 <Route path="/create/user" component={CreateCustomer} />
                 <Route path="/list/publication" component={ListPublication} />
 

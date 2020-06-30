@@ -1,0 +1,27 @@
+.fundo{
+  background-color: #CCDBDC;
+}
+.inputts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.inputts input{
+  background-color: white;
+  border: none;
+  width:20vw;
+  padding: 7px;
+  border-radius: 7px;
+  color: black !important;
+}
+.button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button button{
+  margin: 10px;
+  border-radius: 7px;
+  padding: 7px;
+}

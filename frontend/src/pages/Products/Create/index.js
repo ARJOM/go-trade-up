@@ -41,43 +41,45 @@ export default function CreateProduct(){
 
     return (
         <div>
-            <div className="top">
-                <section className="title">
-                    <h1> Cadastrar Novo Produtos </h1>
+            <div>
+                <section>
+                    <h1 className="tituloo"> Cadastrar Novo Produtos </h1>
                 </section>
             </div>
 
             <section className="form">
                 <form onSubmit={handleSubmit}>
-                    <section className="inputs">
+                    <section className="inputes">
+                    Nome do produto:
                         <label>
-                            Nome do produto:
-                            <input type="text" className="nbreak" className="req" placeholder="Nome" value={name} onChange={text=>setName(text.target.value)}/>
+                            <input type="text" placeholder="Nome" value={name} onChange={text=>setName(text.target.value)}/>
                         </label>
+                        Preço do produto:
 
                         <label>
-                            Preço do produto:
-                            <input type="text" className="break" className="req"value={price} onChange={text=>setPrice(text.target.value)}/>
+                            <input type="text" placeholder="Preço" value={preco} onChange={text=>setPreco(text.target.value)}/>
                         </label>
+                        Foto:
 
                         <label>
                             Foto:
                             <input type="file" src="" alt="No Images Available" onChange={e => setFoto(e.target.files[0])}/>
                         </label>
+                            Descrição:
 
-                        <label for="Descricao">
-                            Descricao:
-                            <input type="text" className="break" className="req" placeholder="Quantidade" min="1" value={descricao} onChange={text => setDescricao(text.target.value)}/>
+                        <label>
+                            <textarea type="text"  placeholder="Descrição" value={descricao} onChange={text=>setDescricao(text.target.value)}/>
+
                         </label>
                     </section>
 
                     <section>
-                        <button className="btn-cancel">
+                        <button className="btn-cancelar">
                             Cancelar
                         </button>
 
-                        <button className="btn-concluir">
-                            Salvar Alteracoes
+                        <button type="submit" className="btn-concluir">
+                            Adicionar Produto
                         </button>
 
                     </section>

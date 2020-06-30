@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../../../services/api';
 import Pictures from "../../../services/Pictures";
+import './style.css'
 
 export default function EditProduct(){
 
@@ -28,7 +29,7 @@ export default function EditProduct(){
                 setDescricao(response.data.description);
             })
             .catch(err => alert("Erro ao carregar produto"))
-    }, []);
+    }, [id, token]);
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -58,24 +59,24 @@ export default function EditProduct(){
     }
 
     return (
-        <div>
-            <div className="top">
-                <section className="title">
-                    <h1> Editar Produtos </h1>
+        <div className="container-edit">
+            <div>
+                <section>
+                    <h1 className="tituloo"> Editar Produtos </h1>
                 </section>
             </div>
 
             <section className="form">
                 <form>
-                    <section className="inputs">
+                    <section className="inputes">
                         <label for="Novo nome">
                             Novo nome do produto:
-                            <input type="text" className="nbreak" placeholder="Novo nome" value={name} onChange={text => setName(text.target.value)}/>
+                            <input type="text" placeholder="Novo nome" value={name} onChange={text=>setName(text.target.value)}></input>
                         </label>
 
                         <label for="Novo preco">
                             Novo preco do produto:
-                            <input type="text" className="break" placeholder="Novo preco" value={preco} onChange={text => setPreco(text.target.value)}/>
+                            <input type="text" placeholder="Novo preco" value={preco} onChange={text => setPreco(text.target.value)}/>
                         </label>
 
                         <label for="Nova foto">
@@ -85,28 +86,28 @@ export default function EditProduct(){
 
                         <label for="Nova descricao">
                             Nova descricao:
-                            <input type="text" className="nbreak" placeholder="Nova descricao" value={descricao} onChange={text => setDescricao(text.target.value)}/>
+                            <input type="text"  placeholder="Nova descricao" value={descricao} onChange={text => setDescricao(text.target.value)}/>
                         </label>
+
                     </section>
 
-                    <input type="submit" value="Alterar"/>
-
-                    <section className="buttons">
-                        <button className="btn-cancel">
+                    <section className="botooes">
+                        <button className="btn-cancelar">
                             Cancelar
                         </button>
 
-                        <button className="btn-excluir">
+                        <button className="btn-exclui">
                             Excluir Produto
                         </button>
 
-                        <button onClick={handleSubmit} className="btn-concluir">
+                        <button onClick={handleSubmit} className="btn-conclu">
                             Salvar Alteracoes
                         </button>
 
                     </section>
                 </form>
             </section>
+
         </div>
     )
 }

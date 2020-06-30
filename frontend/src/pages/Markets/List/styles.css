@@ -32,12 +32,21 @@ background: none;
   font-size: 1.3em;
   margin-left: 20px;
 }
+.btn-contact a{
+  background: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1em;
+}
 .buttons{
   width: 100%;
   justify-content: space-around;
   display: flex;
   justify-content: space-around !important;
   margin-bottom: 5px;
+}
+button{
+  cursor: pointer;
 }
 .buttons button{
   border-radius: 7px;

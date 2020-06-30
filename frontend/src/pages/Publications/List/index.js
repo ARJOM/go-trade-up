@@ -8,7 +8,7 @@ export default function ListPublication(){
         <div className="listMarket">
             <div>
                 <section>
-                    <h1 className="titulo"> Portal de Doações </h1>
+                    <h1> Portal de Doações </h1>
                 </section>
             </div>
 

@@ -14,27 +14,22 @@ export default function CreatePublication(){
 
     return (
         <div className="container-transparencia">
-            <div className="top">
-                <section className="title">
+            <div>
+                <section className="titulo">
                     <h1> Nova Publicacao de Transparencia </h1>
                 </section>
             </div>
 
             <section className="form">
                 <form>
-                    <section className="inputs">
+                    <section className="inpute">
                         <label className="Descricao">
                             <span>Descrição:</span>
                             <textarea className="textAreaa" type="text" className="nbreak" value={descricao} onChange={text=>setDescricao(text.target.value)}/>
                         </label>
-                    </section>
-
-
-                    <section className="buttons">
                         <button onClick={handleSubmit} className="btn-concluir">
                             PUBLICAR
                         </button>
-
                     </section>
                 </form>
             </section>

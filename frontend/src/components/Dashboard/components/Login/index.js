@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from "react";
+import { useHistory } from 'react-router-dom';
 import api from "../../../../services/api";
+import './styles.css';
 
 export default function Login() {
+    const history = useHistory();
     // Login states
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -18,6 +21,8 @@ export default function Login() {
             if (response.data.auth){
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('email', email);
+                alert('Bem vindo !')
+                history.push('/edit/user')
             }
         } catch (e) {
             alert("Falha ao logar");
@@ -25,8 +30,10 @@ export default function Login() {
     }
 
     return(
-        <form onSubmit={handleLogin}>
-            <section className="inputs">
+        <form onSubmit={handleLogin} >
+            <div  className="fundo">
+
+            <section className="inputts">
                 <label htmlFor="User-or-email">
                     <p>Email:</p>
                     <input type="text"
@@ -47,11 +54,12 @@ export default function Login() {
                     />
                 </label>
             </section>
-            <section className="buttons">
-                <button type="submit" className="btn-concluir">
+            <section className="button">
+                <button type="submit" className="btn-conclui">
                     Entrar
                 </button>
             </section>
+            </div>
         </form>
     )
 }
