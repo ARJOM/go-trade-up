@@ -32,7 +32,7 @@ export default function ListMarket(){
                         <section className="buttons">
                             <button className="btn-listprd" onClick={() => history.push(`/list/products/${market.email}`)}>Ver Produtos </button>
 
-                            <button className="btn-contact"> Entrar em Contato </button>
+                            <button className="btn-contact"> <a href={`https://wa.me/${market.phone}`} >Entrar em Contato </a></button>
                         </section>
                     </React.Fragment>
                 ))}

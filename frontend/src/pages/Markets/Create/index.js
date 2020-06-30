@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import api from '../../../services/api';
 import './styles.css';
 
 export default function CreateMarket(){
+    const history = useHistory();
 
     const [nome, setName] = useState();
     const [email, setEmail] = useState();
@@ -12,21 +14,25 @@ export default function CreateMarket(){
     const [endereco, setEndereco] = useState();
     const [telefone, setTelefone] = useState();
 
-    async function handleSubmit(){
+    async function handleSubmit(e){
+        e.preventDefault();
         const data = {
             user_name: nome,
             email: email,
             password: senha,
-            state: estado,
+            uf: estado,
             city: cidade,
             address: endereco,
-            telephone: telefone
+            phone: telefone
         };
+        console.log(data)
         try{
             const response = await api.post('markets', data);
             alert('Cadastro de Comerciante realizado com sucesso!');
+            alert('Realize login clicando no canto superior direito da tela.')
+            history.push('/');
         }catch(err){
-            alert('Erro no cadastro. Tente novamente.', err)
+            console.log('DEU RUIM  no cadastro. Tente novamente.', err)
         }
     }
 
@@ -50,7 +56,7 @@ export default function CreateMarket(){
                         </label>
 
                         <label for="Senha">
-                            <input type="text" placeholder="Senha" value={senha} onChange={text=>setSenha(text.target.value)}/>
+                            <input type="password" placeholder="Senha" value={senha} onChange={text=>setSenha(text.target.value)}/>
                         </label>
 
                         <label for="Estado">

@@ -5,7 +5,18 @@
   align-items: center;
   flex-direction: column;
 }
-
+.topo h1{
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formulario{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
 .formulario input{
   text-align: start !important;
   background-color: white;

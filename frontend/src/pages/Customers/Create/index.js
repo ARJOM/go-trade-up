@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../../../services/api.js';
 import './styles.css';
 
 export default function CreateCustomer(){
+    const history = useHistory();
 
     const [name, setName ] = useState();
     const [email, setEmail] = useState();
@@ -19,9 +21,9 @@ export default function CreateCustomer(){
         }
 
         const response = await api.post('users', data);
-            console.log('RESPONSE AQUI NO FRONT:  ', response.data)
             alert(response.data)
-
+            alert( 'Clique na foto no canto superior direto para logar! ')
+            history.push('/');
     }
 
     return(
