@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {useHistory} from 'react-router-dom';
 import { Modal } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -45,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function UserModal() {
+    const history = useHistory();
     // Modasl states
     const classes = useStyles();
     const [modalStyle] = useState(getModalStyle);
@@ -78,17 +80,22 @@ export default function UserModal() {
                 >
                 <Fade in={open}>
                     <div style={modalStyle} className={classes.paper}>
-                        <h2 className="title"> Entre e</h2>
+                        <h2 className="titlle"> Bem vindo ao GoTradeUp!</h2>
                         <section className="modal-form">
 
                             <section className="buttons">
 
-                                <button className="btn-cancel" onClick={() => localStorage.removeItem('token')}>
-                                    Sair
+                                <button className="btn-cancell" onClick={() => {
+                                    localStorage.removeItem('token')
+                                    history.push('/')
+                                    }}>
+                                        Sair
                                 </button>
 
                                 <button className="btn-concluir">
-                                    <a href=""> Minha Conta </a>
+                                    <a onClick={ ()=>{
+                                        history.push('/edit/user')
+                                    }}> Alterar Meus Dados </a>
                                 </button>
                             </section>
                         </section>

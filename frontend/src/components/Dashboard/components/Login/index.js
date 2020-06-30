@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from "react";
+import { useHistory } from 'react-router-dom';
 import api from "../../../../services/api";
 import './styles.css';
 
 export default function Login() {
+    const history = useHistory();
     // Login states
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -19,6 +21,8 @@ export default function Login() {
             if (response.data.auth){
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('email', email);
+                alert('Bem vindo !')
+                history.push('/edit/user')
             }
         } catch (e) {
             alert("Falha ao logar");
