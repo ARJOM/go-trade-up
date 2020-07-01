@@ -1,0 +1,63 @@
+.container-market{
+  min-height: 70vh !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.titulo{
+  font-size: 1em !important;
+}
+.formulario{
+  margin-top: 50px;
+  width: 70vw !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section h1{
+  font-size: 2em;
+  font-weight: 500;
+  position: relative;
+  top: 20px;
+}
+.formulario input{
+  width: 40vw;
+  text-align: center;
+}
+.botoes{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.botoes button{
+  height: 45px;
+}
+form button:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+.btn-cancel{
+  background-color: darkorange !important;
+  border: none;
+  border-radius: 4px;
+  width: 15vw;
+  height: 8vh;
+  color: black !important;
+  font-size: 1.3em;
+  font-weight: 500;
+  padding-bottom: 20px !important;
+}
+
+.btn-concluir{
+  background-color: darkgreen !important;
+  border: none;
+  border-radius: 4px;
+  width: 15vw;
+  height: 8vh;
+  color: black !important;
+  font-size: 1.3em;
+  font-weight: 500;
+}

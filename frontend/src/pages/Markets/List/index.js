@@ -1,30 +1,44 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../../../services/api';
-import './style.css';
+import './styles.css';
 
 export default function ListMarket(){
+    const [markets, setMarkets] = useState([]);
+
+    const history = useHistory();
+
+    useEffect(() => {
+        api.get('markets')
+            .then(response => {setMarkets(response.data); console.log(response.data)})
+            .catch(err => alert("Erro ao carregar comerciantes"))
+    }, []);
 
     return (
-        <div>
-            <div className="top">
-                <section className="title">
+        <div className="listMarket">
+            <div>
+                <section>
                     <h1> Comerciantes </h1>
                 </section>
             </div>
 
-            <section className="content">
+            <div className="content">
+                {markets.map(market => (
+                    <React.Fragment  key={market.email}>
+                        <section className="dados">
+                            <p><darker>Comércio: </darker>{market.user_name}</p>
+                            <p><darker>Local de atuação: </darker>{market.city} - {market.uf}</p>
+                        </section>
+                        <section className="buttons">
+                            <button className="btn-listprd" onClick={() => history.push(`/list/products/${market.email}`)}>Ver Produtos </button>
 
-                <p><darker>Comércio: </darker>//render content//.</p>
+                            <button className="btn-contact"> <a href={`https://wa.me/${market.phone}`} >Entrar em Contato </a></button>
 
-                <p><darker>Local de atuação:</darker>//render content//.</p>
+                        </section>
+                    </React.Fragment>
+                ))}
+            </div>
 
-            </section>
-
-            <section className="buttons">
-                <button className="btn-listprd"> <a href=""> Ver Produtos </a> </button>
-
-                <button className="btn-contact"> <a href=""> Entrar em Contato </a> </button>
-            </section>
         </div>
     )
 }

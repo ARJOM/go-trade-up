@@ -3,14 +3,13 @@ const crypto = require('crypto');
 module.exports = {
 
       async create(req, res){
-        const {description, publication_date} = req.body;
-        
+        const {description} = req.body;
+
         const id = crypto.randomBytes(4).toString('HEX');
 
         const inserir = await connection('publications').insert({
             id,
-            description,
-            publication_date
+            description
         })
         .catch(err=>{
           return res.json({procedimento: 'Criar Publicação', Status: 'Erro ao tentar criar', Error: err});
@@ -21,7 +20,7 @@ module.exports = {
     },
 
     async index(req, res){
-        
+
         const pubs = await connection('publications').select('*').catch(err=>{
             return res.json({procedimento: 'Listar Publicações',
             Status: 'Erro ao listar publicações: ', Error: err});

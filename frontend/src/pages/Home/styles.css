@@ -12,6 +12,13 @@
 .background1 section, h1, p, darker{
   background: none;
 }
+.title2{
+  margin-bottom: 60px !important;
+}
+.text1 p{
+  width: 70vw !important;
+  font-weight: 500;
+}
 .background1 section{
   margin-bottom: 50px;
   height: 100%;
@@ -141,7 +148,12 @@
 .formCorona form, .formCorona div{
   background: none;
 }
-
+.background5{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .background5 section,  .background5 h1, .background5 p{
   background: none;
   padding: 1vh;

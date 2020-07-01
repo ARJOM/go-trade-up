@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import api from '../../../services/api';
-import './style.css';
+import './styles.css';
 
 export default function CreateMarket(){
+    const history = useHistory();
 
     const [nome, setName] = useState();
     const [email, setEmail] = useState();
@@ -12,80 +14,76 @@ export default function CreateMarket(){
     const [endereco, setEndereco] = useState();
     const [telefone, setTelefone] = useState();
 
-    async function handleSubmit(){
+    async function handleSubmit(e){
+        e.preventDefault();
         const data = {
             user_name: nome,
             email: email,
             password: senha,
-            state: estado,
+            uf: estado,
             city: cidade,
             address: endereco,
-            telephone: telefone
-        }
+            phone: telefone
+        };
+        console.log(data);
         try{
-            const response = await api.post('users', data);
+            const response = await api.post('markets', data);
             alert('Cadastro de Comerciante realizado com sucesso!');
+            alert('Realize login clicando no canto superior direito da tela.')
+            history.push('/');
         }catch(err){
-            alert('Erro no cadastro. Tente novamente.', err)
+            console.log('DEU RUIM  no cadastro. Tente novamente.', err)
         }
     }
 
     return(
-        <div>
-            <div className="top">
-                <section className="title">
-                    <h1>Cadastre-se como Comerciante</h1>
+        <div className="container-market">
+            <div>
+                <section>
+                    <h1>Cadastrar-se como Comerciante</h1>
                 </section>
             </div>
 
-            <section className="form">
+            <section className="formulario">
                 <form type="submit">
-                    <section class="inputs">
-                        <label for="Nome">
-                            Nome:
-                            <input type="text" className="nbreak" className="req" placeholder="Nome" value={nome} onChange={text=>setName(text.target.value)}></input>
+                    <section className="inputes">
+                        <label htmlFor="Nome">
+                            <input type="text" placeholder="Nome" value={nome} onChange={text=>setName(text.target.value)} />
                         </label>
 
-                        <label for="Email">
-                            Email:
-                            <input type="text" className="nbreak" className="req" placeholder="E-mail" value={email} onChange={text=>setEmail(text.target.value)} ></input>
+                        <label htmlFor="Email">
+                            <input type="text" placeholder="E-mail" value={email} onChange={text=>setEmail(text.target.value)} />
                         </label>
 
-                        <label for="Senha">
-                            Senha:
-                            <input type="text" className="nbreak" className="req" placeholder="Senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
+                        <label htmlFor="Senha">
+                            <input type="password" placeholder="Senha" value={senha} onChange={text=>setSenha(text.target.value)}/>
                         </label>
 
-                        <label for="Estado">
-                            Estado:
-                            <input type="text" className="break" className="req" placeholder="Estado" value={estado} onChange={text=>setEstado(text.target.value)}></input>
+                        <label htmlFor="Estado">
+                            <input type="text" placeholder="Estado" value={estado} onChange={text=>setEstado(text.target.value)}/>
                         </label>
 
-                        <label for="Cidade">
-                            Cidade:
-                            <input type="text" className="break" className="req" placeholder="Cidade" value={cidade} onChange={text=>setCidade(text.target.value)}></input>
+                        <label htmlFor="Cidade">
+                            <input type="text" placeholder="Cidade" value={cidade} onChange={text=>setCidade(text.target.value)}/>
                         </label>
 
-                        <label for="Endereco">
-                            Endereco:
-                            <input type="text" className="nbreak" className="req" placeholder="Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}></input>
+                        <label htmlFor="Endereco">
+                            <input type="text" placeholder="Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}/>
                         </label>
 
-                        <label for="Telefone">
-                            Telefone para contato:
-                            <input type="text" className="break" className="req" placeholder="Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}></input>
+                        <label htmlFor="Telefone">
+                            <input type="text"  placeholder="Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}/>
                         </label>
 
                     </section>
-                    <input type="submit" value="Cadastrar"></input>
 
-                    <section class="buttons">
+                    <section className="botoes">
                         <button className="btn-cancel">
                             Cancelar
                         </button>
 
                         <button onClick={handleSubmit} className="btn-concluir">
-                            Concluir Cadastro
+                            Concluir
                         </button>
                     </section>
                 </form>

@@ -3,6 +3,13 @@ import api from '../../../services/api';
 import './style.css';
 
 export default function EditMarket(){
+    const [nome, setNome] = useState();
+    const [email, setEmail] = useState();
+    const  [estado, setEstado] = useState();
+    const [senha, setSenha] = useState();
+    const [cidade, setCidade] = useState();
+    const [endereco, setEndereco] = useState();
+    const [telefone, setTelefone] = useState();
 
     async function handleSubmit(){
         const data = {
@@ -17,67 +24,66 @@ export default function EditMarket(){
     }
 
     return (
-        <div>
-            <div className="top">
-                <section className="title">
+        <div className="editMarket">
+            <div>
+                <section>
                     <h1> Editar Dados - Comerciante </h1>
                 </section>
             </div>
 
-            <section className="form">
+            <section>
                 <form>
-                    <section className="inputs">
+                    <section className="entradas">
+                        <b> Novo nome:</b>
                         <label for="Novo nome">
-                            Altere seu nome:
-                            <input type="text" className="nbreak" placeholder="Novo nome" value={nome} onChange={text=>setNome(text.target.value)}></input>
+                            <input type="text" className="telefone" placeholder="Novo nome" value={nome} onChange={text=>setNome(text.target.value)}></input>
                         </label>
 
+                      <b> Novo e-mail:</b>
                         <label for="Novo e-mail">
-                            Altere seu e-mail:
-                            <input type="text" className="break" placeholder="Novo e-mail" value={email} onChange={text=>setEmail(text.target.value)}></input>
+                            <input type="text" className="telefone" placeholder="Novo e-mail" value={email} onChange={text=>setEmail(text.target.value)}></input>
                         </label>
 
+                      <b>Nova senha:</b>
                         <label for="Nova senha">
-                            Altere sua senha:
-                            <input type="text" className="nbreak" placeholder="Nova senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
+                            <input type="text" className="telefone" placeholder="Nova senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
                         </label>
+
+                        <b>Novo número:</b>
+                        <label for="Novo Telefone">
+                            <input type="text" className="telefone" placeholder="Novo Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}></input>
+                        </label>
+                            <section className="location">
 
                         <label for="Novo estado">
-                            Altere seu estado:
-                            <input type="text" className="break" placeholder="Novo estado" value={estado} onChange={text=>setEstado(text.target.value)}></input>
+                            <input type="text" className="break" placeholder="Estado" value={estado} onChange={text=>setEstado(text.target.value)}></input>
                         </label>
 
                         <label for="Nova Cidade">
-                            Altere sua cidade:
-                            <input type="text" className="break" placeholder="Nova Cidade" value={cidade} onChange={text=>setCidade(text.target.value)}></input>
+                            <input type="text" className="break" placeholder="Cidade" value={cidade} onChange={text=>setCidade(text.target.value)}></input>
                         </label>
 
                         <label for="Nova Endereco">
-                            Altere seu endereco:
-                            <input type="text" className="nbreak" placeholder="Novo Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Endereco" value={endereco} onChange={text=>setEndereco(text.target.value)}></input>
                         </label>
-
-                        <label for="Novo Telefone">
-                            Altere seu telefone:
-                            <input type="text" className="break" placeholder="Novo Telefone" value={telefone} onChange={text=>setTelefone(text.target.value)}></input>
-                        </label>
-                    </section>
-                    <input type="submit" value="Editar Dados"></input>
-
-                    <section className="buttons">
-                        <button className="btn-cancel">
+                        </section>
+                        <section className="botoes">
+                        <button className="btn-cancelado">
                             Cancelar
                         </button>
 
-                        <button className="btn-excluir">
+                        <button className="btn-excluido">
                             Excluir Usuario
                         </button>
 
-                        <button onClick={handleSubmit} className="btn-concluir">
+                        <button onClick={handleSubmit} className="btn-concluido">
                             Salvar Alteracoes
                         </button>
 
                     </section>
+                    </section>
+
+                 
                 </form>
             </section>
         </div>

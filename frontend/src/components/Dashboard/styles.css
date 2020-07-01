@@ -84,3 +84,131 @@ nav a:hover{
     margin-top: 5vh;
     overflow: hidden;
 }
+
+
+
+.modal-form{
+    background-color: "#4b99ad";
+	margin:10px auto;
+	max-width: 500px;
+	padding: 20px 12px 10px 20px;
+	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+option{
+	background-color: darkgreen;
+}
+.modal-form li {
+	padding: 0;
+	display: block;
+	list-style: none;
+	margin: 10px 0 0 0;
+}
+
+.modal-form label{
+	margin:0 0 3px 0;
+	padding:0px;
+	display:block;
+	font-weight: bold;
+}
+
+.modal-form input[type=text], textarea, select{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px;
+	margin:0px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	transition: all 0.30s ease-in-out;
+	outline: none;	
+}
+
+.modal-form input[type=text]:focus, .modal-form textarea:focus, .modal-form select:focus{
+	-moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 1px solid #88D5E9;
+}
+
+.modal-form .break{
+	width: 49%;
+}
+
+.modal-form .nbreak{
+	width: 100%;
+}
+
+.modal-form .inputs{
+	width: 100%;
+}
+
+.modal-form {
+	height: 100px;
+}
+
+.modal-form input[type=submit], .btn-concluir{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    float: right;
+    justify-content: center;
+    justify-items: center;
+	background: darkgreen;
+	padding: 8px 15px 8px 15px;
+	border: none;
+    color: #fff;
+    margin-top: 4px;
+    width: 100%;
+}
+
+.modal-form input[type=submit]:hover, .modal-form button:hover, button:hover{
+	background: #4691A4;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+
+.modal-form .req{
+	color:red;
+}
+
+.modal-form .btn-cancel, .modal-form input .btn-cancel {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    float: left;
+    justify-items: center;
+    justify-content: center;
+	background-color: darkred;
+	padding: 8px 15px 8px 15px;
+	border: none;
+    color: #fff;
+    margin-top: 4px;
+    width: 30%;
+}
+
+.btn-excluir {
+    background-color: darkorange;
+}
+
+.btn-concluir {
+    background-color: darkgreen;
+}
+
+.content .btn-contact, .btn-add, .buttons .btn-contact, .buttons .btn-listprd{
+	background-color: darkgreen;
+	padding: 8px 15px 8px 15px;
+	border: none;
+    color: #fff;
+    margin-top: 4px;
+}
+
+.btn-contact:hover, .btn-add:hover, .buttons .btn-contact:hover, .buttons .btn-listprd:hover{
+	background-color: darkgreen;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}

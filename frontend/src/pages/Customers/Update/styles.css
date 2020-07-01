@@ -1,0 +1,53 @@
+.editContainer{
+  min-height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.topo h1{
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formulario{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.formulario input{
+  text-align: start !important;
+  background-color: white;
+  border: none;
+  border-radius: 7px;
+  margin: 10px;
+}
+.butttons{
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+  margin-top: 120px;
+}
+.butttons button{
+  max-width: 30%;
+  border-radius: 7px;
+  color: black;
+  font-size: 1.2em;
+}
+.butttons button:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+.btn-conclui{
+  background-color: darkgreen !important;
+}
+
+
+
+
+
+.btn-excluir{
+  background-color: red !important;
+}

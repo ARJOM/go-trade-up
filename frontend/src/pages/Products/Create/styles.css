@@ -1,0 +1,30 @@
+.tituloo{
+  text-align: center;
+}
+.inputes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 60vh;
+}
+.inputes input{
+  color: black !important;
+  border: none;
+  background-color: white;
+  width: 40vw;
+  border-radius: 7px;
+  padding: 14px;
+}
+.inputes textarea{
+  min-width: 40vw;
+}
+.btn-cancelar{
+  background-color: darkorange !important;
+    color: black !important;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    border-radius:7px;
+    width: 15vw;
+    height: 8vh;
+}

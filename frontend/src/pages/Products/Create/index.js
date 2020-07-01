@@ -1,60 +1,85 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './style.css';
+import Pictures from "../../../services/Pictures";
 
 export default function CreateProduct(){
 
-    async function handleSubmit(){
+    const [name, setName] = useState("");
+    const [preco, setPreco] = useState("");
+    const [foto, setFoto] = useState(null);
+    const [descricao, setDescricao] = useState("");
+
+    async function handleSubmit(e){
+        e.preventDefault();
+
+        const token = localStorage.getItem("token");
+        const email = localStorage.getItem("email");
+
+        const picture = await Pictures.upload({path: 'products', uid: email, file_name: name, file: foto});
+
         const data = {
-            name: name,
+            market: email,
+            product_name: name,
             price: preco,
-            photo: foto,
+            photo: picture,
             description: descricao,
-            quantity: quantidade,
+        };
+
+        try {
+            const response = await api.post('products', data, {
+                headers: {
+                    'x-access-token': token
+                }
+            });
+            alert("Produto cadastrado");
+
+        } catch (err) {
+            console.log(err);
+            alert("Falha ao registrar produto")
         }
     }
 
     return (
         <div>
-            <div className="top">
-                <section className="title">
-                    <h1> Cadastrar Novo Produtos </h1>
+            <div>
+                <section>
+                    <h1 className="tituloo"> Cadastrar Novo Produtos </h1>
                 </section>
             </div>
 
             <section className="form">
-                <form>
-                    <section className="inputs">
-                        <label for="Nome">
-                            Nome do produto:
-                            <input type="text" className="nbreak" className="req" placeholder="Nome" value={name} onChange={text=>setName(text.target.value)}></input>
+                <form onSubmit={handleSubmit}>
+                    <section className="inputes">
+                    Nome do produto:
+                        <label>
+                            <input type="text" placeholder="Nome" value={name} onChange={text=>setName(text.target.value)}/>
                         </label>
+                        Preço do produto:
 
-                        <label for="Preco">
-                            Preco do produto:
-                            <input type="text" className="break" className="req" placeholder="Preco" value={preco} onChange={text=>setPreco(text.target.value)}></input>
+                        <label>
+                            <input type="text" placeholder="Preço" value={preco} onChange={text=>setPreco(text.target.value)}/>
                         </label>
+                        Foto:
 
-                        <label for="Foto">
+                        <label>
                             Foto:
-                            <input type="image" src="" alt="No Images Available" > </input>
+                            <input type="file" src="" alt="No Images Available" onChange={e => setFoto(e.target.files[0])}/>
                         </label>
+                            Descrição:
 
-                        <label for="Quantidade">
-                            Quantidade:
-                            <input type="number" className="break" className="req" placeholder="Quantidade" min="1" value={quantidade} onChange={text=>setQuantidade(text.target.value)}></input>
+                        <label>
+                            <textarea type="text"  placeholder="Descrição" value={descricao} onChange={text=>setDescricao(text.target.value)}/>
+
                         </label>
                     </section>
 
-                    <input type="submit" value="Alterar"></input>
-
                     <section>
-                        <button className="btn-cancel">
+                        <button className="btn-cancelar">
                             Cancelar
                         </button>
 
-                        <button onClick={handleSubmit} className="btn-concluir">
-                            Salvar Alteracoes
+                        <button type="submit" className="btn-concluir">
+                            Adicionar Produto
                         </button>
 
                     </section>

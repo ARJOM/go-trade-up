@@ -1,48 +1,55 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {Link, BrowserRouter} from "react-router-dom";
 import logo from '../../assets/logo.png';
-import './styles.css'
+import './styles.css';
+
+import UserModal from "./components/Modal";
 
 export default function Dashboard(props){
+
+
+    // Dashboard renderizado
     return(
+        <BrowserRouter>
         <div className="container">
 
         <div className="dashboard">
             <div className="photos-dashboard">
-            <span className="logo" ><img src={logo} height="60px" width="210px" /> </span>
-        
-        <span><a href="#"><img  className="user"  src="https://www.pngkit.com/png/detail/133-1338563_boys-wrestling-avatar-html.png" /></a></span>
+                <span className="logo" ><img src={logo} height="60px" width="210px" /> </span>
+
+                <UserModal/>
             </div>
-            
+
         <nav className="menu">
         <hr/>
             <div className="div">
-                <a href="#" className="nav-btn">Página Inicial</a>
+                <Link className="nav-btn" to="/">Página Inicial</Link>
             </div>
             <div className="div">
-                <a href="#" className="nav-btn">Transparência</a>
+                <Link className="nav-btn" to="/list/publication">Transparência</Link>
             </div>
             <div className="div">
-                <a href="#" className="nav-btn">Comerciantes</a>
+                <Link className="nav-btn" to="/list/markets">Comerciantes</Link>
             </div>
             <div className="div">
-                <a href="#" className="nav-btn">Realizar Doação</a>
+                <Link className="nav-btn" to="/create/donation">Realizar Doação</Link>
             </div>
             <div className="div">
-                <a href="#" className="nav-btn">Meus Produtos</a>
+                <Link className="nav-btn" to="/products">Meus Produtos</Link>
             </div>
             <div className="div">
-                <a href="#" className="nav-btn">Nova Publicação</a>
+                <Link className="nav-btn" to="/create/publication">Nova Publicação</Link>
             </div>
-            
+
         </nav>
-      
+
         </div>
 
         <div className="body">
                {props.children}
         </div>
-    
-        </div>
 
+        </div>
+        </BrowserRouter>
     )
 }

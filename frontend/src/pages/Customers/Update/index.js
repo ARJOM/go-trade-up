@@ -1,46 +1,79 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../../../services/api';
-import './style.css';
+import './styles.css';
 
 export default function EditCustomer(){
+        const history = useHistory();
+
+        const [name, setName] = useState('');
+        const [email, setEmail] = useState('');
+        const [senha, setSenha] = useState('');
+
+        useEffect(()=>{
+            const token = localStorage.getItem("token");
+            const userEmail = localStorage.getItem('email')
+            api.get(`users/${userEmail}`, {headers: {'x-access-token': token}}).then(response =>{
+                    setName(response.data.user_name)
+                    setEmail(response.data.email)
+            })
+        }, [])
 
     async function handleSubmit(){
+        const emaill = localStorage.getItem('email')
+        const token = localStorage.getItem("token");
+
         const data = {
-            user_name: nome,
+            user_name: name,
             email: email,
             password: senha
+        }
+
+         try{
+            const token = localStorage.getItem("token");
+            const userEmail = localStorage.getItem('email')
+            const resposta =  await api.put(`/users/${userEmail}`, data, {
+                headers: {
+                    'x-access-token': token
+                }
+            })
+            console.log(resposta.data)
+            alert('Dados alterados com sucesso!')
+        }catch(err){
+            alert('Falha ao alterar dados.')
         }
     }
 
     return (
-        <div>
-            <div className="top">
-                <section className="title">
-                    <h1> Editar Dados - Cliente </h1>
+        <div className="editContainer">
+            <div>
+                <section className="topo">
+                    <h1>     Editar Dados - Cliente </h1>
                 </section>
             </div>
 
-            <section className="form">
+            <section className="formulario">
                 <form>
                     <section className="inputs">
                         <label for="Novo nome">
                             Altere seu nome:
-                            <input type="text" className="nbreak" placeholder="Novo nome" value={nome} onChange={text=>setNome(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Novo nome" value={name} onChange={text=>setName(text.target.value)}></input>
                         </label>
 
                         <label for="Novo e-mail">
-                            Altere seu e-mail:
-                            <input type="text" className="nbreak" placeholder="Novo e-mail" value={email} onChange={text=>setEmail(text.target.value)}></input>
+                            E-mail:
+                            <input type="text" disabled={true} className="nbreak" value={email}></input>
                         </label>
 
                         <label for="Nova senha">
                             Altere sua senha:
-                            <input type="text" className="nbreak" placeholder="Nova senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
+                            <input type="password" className="nbreak" placeholder="Nova senha" value={senha} onChange={text=>setSenha(text.target.value)}></input>
                         </label>
                     </section>
-                    <input type="submit" value="Editar Dados"></input>
 
-                    <section className="buttons">
+                  
+                </form>
+                <section className="butttons">
                         <button className="btn-cancel">
                             Cancelar
                         </button>
@@ -49,12 +82,10 @@ export default function EditCustomer(){
                             Excluir Usuario
                         </button>
 
-                        <button onClick={handleSubmit} className="btn-concluir">
+                        <button onClick={handleSubmit} className="btn-conclui">
                             Salvar Alteracoes
                         </button>
-
                     </section>
-                </form>
             </section>
         </div>
     )

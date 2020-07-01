@@ -1,0 +1,81 @@
+.donate-container{
+  overflow: hidden;
+  height:85vh;
+  width: 70vw;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}
+section h1{
+  font-size: 2.5em !important; 
+
+}
+.former{
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.former form{
+  margin-top: 50px;
+}
+.entrada span{
+  width: 700px;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+.former form input, .former form textarea{
+  width: 50vw !important;
+  background-color: white;
+  border: none;
+  border-radius:7px;
+}
+.newDonation{
+  text-align: center;
+}
+.top{
+  margin-left: 22%;
+}
+.entrada{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.paypal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  text-align: center;
+  flex-direction: row;
+}
+.paypal a{
+  background-color: #CCDBDC;
+}
+.paypal img{
+  height: 5%;
+  width: 25%;
+}
+label input{
+  padding: 10px;
+  margin: 4px;
+}
+label textarea{
+  margin: 4px;
+}
+.btn-concluir{
+  position: relative;
+  top: 7px;
+}
+.inputs{
+  color: black;
+  font-weight: 500;
+  margin-top: 40px;
+  font-size: 1.3em;
+}
+.inputs span{
+
+  position: relative;
+  bottom: 1px;
+}

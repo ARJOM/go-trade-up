@@ -1,12 +1,24 @@
 .foooter{
   background-color: #003E72;
-  width: 100%;
+  width: 98.5vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: 5vh;
-  padding: 4vh;
+}
+.centralizar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: 90px;
+}
+.centralizar section{
+  margin-top: 5px;
+}
+.foooter p{
+  margin-bottom: 10px;
 }
 .foooter section{
   background-color: #003E72;
@@ -16,4 +28,12 @@
   height: 8vh;
   border-radius: 7px;
   margin-bottom: 3vh;
+}
+.btn-concluir a{
+  background: none;
+  font-size: 1em;
+  font-weight: 400;
+}
+.btn-concluir a:hover{
+  opacity: 0.7;
 }

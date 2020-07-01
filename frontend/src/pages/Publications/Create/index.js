@@ -1,49 +1,46 @@
 import React, {useState} from 'react';
 import api from '../../../services/api';
-import './style.css';
+import './styles.css';
 
 export default function CreatePublication(){
+    const [ descricao, setDescricao ] = useState("");
 
-    async function handleSubmit(){
+    const token = localStorage.getItem('token');
+
+    async function handleSubmit(e){
+        e.preventDefault();
+
         const data = {
-            photo: foto,
             description: descricao
-        }
+        };
+
+        api.post('/publications', data, {
+            headers: {
+                'x-access-token': token,
+            }
+        })
+            .then(response => console.log(response))
+            .catch(err => {alert("Erro ao cadastrar"); console.log(err)})
     }
 
     return (
-        <div>
-            <div className="top">
-                <section className="title">
+        <div className="container-transparencia">
+            <div>
+                <section className="titulo">
                     <h1> Nova Publicacao de Transparencia </h1>
                 </section>
             </div>
 
             <section className="form">
                 <form>
-                    <section className="inputs">
-                        <label for="Foto">
-                            Foto:
-                            <input type="image" src="" alt="No Images Available" > </input>
+                    <section className="inpute">
+                        <label className="Descricao">
+                            <span>Descrição:</span>
+                            <textarea className="textAreaa" value={descricao} onChange={text=>setDescricao(text.target.value)}/>
                         </label>
-
-                        <label for="Descricao">
-                            Descreva sua doacao:
-                            <input type="text" className="nbreak" placeholder="Descricao" value={descricao} onChange={text=>setDescricao(text.target.value)}></input>
-                        </label>
-                    </section>
-
-                    <input type="submit" value="Publicar"></input>
-
-                    <section className="buttons">
-                        <button className="btn-cancel">
-                            Cancelar
-                        </button>
-
                         <button onClick={handleSubmit} className="btn-concluir">
-                            Publicar
+                            PUBLICAR
                         </button>
-
                     </section>
                 </form>
             </section>

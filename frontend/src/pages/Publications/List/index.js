@@ -1,24 +1,37 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import api from '../../../services/api';
 import './style.css';
 
 export default function ListPublication(){
+    const [publications,  setPublications] = useState([]);
+
+    const token = localStorage.getItem('token');
+
+    useEffect(() => {
+        api.get('publications/', {
+            headers: {
+                'x-acess-token': token,
+            }
+        })
+            .then(response => setPublications(response.data))
+            .catch(err => alert("Erro ao receber publicações"))
+    }, []);
 
     return (
-        <div>
-            <div className="top">
-                <section className="title">
+        <div className="listMarket">
+            <div>
+                <section>
                     <h1> Portal de Doações </h1>
                 </section>
             </div>
 
-            <section className="content">
-
-                <img src="" alt="No images available"> </img>
-
-                <p> <dark> //render content// </dark> </p>
-
-            </section>
+            <div className="content">
+                {publications.map(publication => (
+                    <section className="dados">
+                        <p>{publication.description}</p>
+                    </section>
+                ))}
+            </div>
 
         </div>
     )
