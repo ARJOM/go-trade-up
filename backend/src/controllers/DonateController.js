@@ -4,18 +4,14 @@ const crypto = require('crypto');
 
 module.exports ={
     async create(req, res){
-        const {description, value} = req.body;
+        const {description} = req.body;
 
         const id = crypto.randomBytes(4).toString('HEX');
 
-        console.log('ID: ', id)
-        console.log('descrição: ', description)
-        console.log('valor: ', value)
 
         const donate = await connection('donations').insert({
             id,
             description,
-            value
         }).catch(err=>{
             return res.json({procedimento: 'Realizar Doação', Status: 'Erro ao doar!', Error: err});
           });

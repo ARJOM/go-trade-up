@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade'
 import './style.css'
-
+import {Link} from 'react-router-dom';
 import Login from "../Login";
 import {isAuthenticated} from "../../../../utils/auth";
 
@@ -135,6 +135,10 @@ export default function UserModal() {
                         </h4>
                         <section>
                             <Login/>
+                        </section>
+                        <section className="detalhes">
+                            <Link onClick={handleClose} className="link" to="/create/user">Cadastre-se como usuário</Link>
+                            <Link onClick={handleClose} className="link" to="/create/market">Cadastre-se como comerciante</Link>
                         </section>
                         </div>
                     </div>
