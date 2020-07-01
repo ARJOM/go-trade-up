@@ -3,15 +3,26 @@ import api from '../../../services/api';
 import './styles.css';
 
 export default function CreateDonation(){
-    const [valores, setValores] = useState();
-    const [description, setDescription] = useState();
-    const [descricao, setDescricao] = useState();
+    const [valores, setValores] = useState(0.0);
+    const [descricao, setDescricao] = useState("");
 
-    async function handleSubmit(){
+    const token = localStorage.getItem("token");
+
+    async function handleSubmit(e){
+        e.preventDefault();
+
         const data = {
-            valores: valores,
+            value: valores,
             description: descricao
-        }
+        };
+
+        api.post('donation/', data, {
+            headers: {
+                'x-access-token': token,
+            }
+        })
+            .then(response => alert("Doação registrada"))
+            .catch(err => alert("Erro ao registrar doação"))
     }
 
     return (
@@ -27,20 +38,20 @@ export default function CreateDonation(){
                     <section className="entrada">
                     <span>Valor da doação:</span>
 
-                        <label for="Valor">
-                            <input type="text" className="nbreak" className="req" value={valores} onChange={text=>setValores(text.target.value)}></input>
+                        <label htmlFor="Valor">
+                            <input type="text" className="req" value={valores} onChange={text => setValores(text.target.value)}/>
                         </label>
-                        
+
                        <span> Descrição:</span>
-                        <label for="Descricao">
-                            <textarea  className="textAreaa" type="text" className="nbreak" value={descricao} onChange={text=>setDescricao(text.target.value)} />
+                        <label htmlFor="Descricao">
+                            <textarea  className="textAreaa" value={descricao} onChange={text=>setDescricao(text.target.value)} />
                         </label>
                     </section>
                     <section>
-                   
+
                     <section className="paypal">
                   <a href="#">
-                  Clique aqui para doar: <img src="https://timeline.canaltech.com.br/339987.700/o-que-e-o-paypal-saiba-tudo-sobre-a-plataforma-de-pagamentos-155603.jpg" />
+                  Clique aqui para doar: <img onClick={handleSubmit} src="https://timeline.canaltech.com.br/339987.700/o-que-e-o-paypal-saiba-tudo-sobre-a-plataforma-de-pagamentos-155603.jpg" />
                     </a>
                         </section>
 
