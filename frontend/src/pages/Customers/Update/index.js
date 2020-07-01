@@ -1,25 +1,46 @@
 import React, {useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../../../services/api';
 import './styles.css';
 
 export default function EditCustomer(){
-        const [name, setName] = useState();
-        const [email, setEmail] = useState();
-        const [senha, setSenha] = useState();
+        const history = useHistory();
+
+        const [name, setName] = useState('');
+        const [email, setEmail] = useState('');
+        const [senha, setSenha] = useState('');
 
         useEffect(()=>{
+            const token = localStorage.getItem("token");
             const userEmail = localStorage.getItem('email')
-            console.log('EMAIL: ', userEmail)
-            api.get(`users/${userEmail}`).then(respose =>{
-                console.log(respose.data);
+            api.get(`users/${userEmail}`, {headers: {'x-access-token': token}}).then(response =>{
+                    setName(response.data.user_name)
+                    setEmail(response.data.email)
             })
         }, [])
 
     async function handleSubmit(){
+        const emaill = localStorage.getItem('email')
+        const token = localStorage.getItem("token");
+
         const data = {
             user_name: name,
             email: email,
             password: senha
+        }
+
+         try{
+            const token = localStorage.getItem("token");
+            const userEmail = localStorage.getItem('email')
+            const resposta =  await api.put(`/users/${userEmail}`, data, {
+                headers: {
+                    'x-access-token': token
+                }
+            })
+            console.log(resposta.data)
+            alert('Dados alterados com sucesso!')
+        }catch(err){
+            alert('Falha ao alterar dados.')
         }
     }
 
@@ -36,12 +57,12 @@ export default function EditCustomer(){
                     <section className="inputs">
                         <label for="Novo nome">
                             Altere seu nome:
-                            <input type="text" className="nbreak" placeholder="exemplo: Marcos Vinicius" value={name} onChange={text=>setName(text.target.value)}></input>
+                            <input type="text" className="nbreak" placeholder="Novo nome" value={name} onChange={text=>setName(text.target.value)}></input>
                         </label>
 
                         <label for="Novo e-mail">
-                            Altere seu e-mail:
-                            <input type="text" className="nbreak" placeholder="exemplo: email@gmail.com" value={email} onChange={text=>setEmail(text.target.value)}></input>
+                            E-mail:
+                            <input type="text" disabled={true} className="nbreak" value={email}></input>
                         </label>
 
                         <label for="Nova senha">
