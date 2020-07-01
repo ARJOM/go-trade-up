@@ -23,7 +23,7 @@ export default function EditProduct(){
             }
         })
             .then(response => {
-                setName(response.data.name);
+                setName(response.data.product_name);
                 setFoto(response.data.photo);
                 setPreco(response.data.price);
                 setDescricao(response.data.description);
@@ -37,7 +37,7 @@ export default function EditProduct(){
         const picture = await Pictures.upload({path: 'products', uid: email, file_name: name, file: foto});
 
         const data = {
-            name: name,
+            product_name: name,
             price: preco,
             photo: picture,
             description: descricao
