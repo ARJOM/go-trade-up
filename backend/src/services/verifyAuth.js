@@ -10,7 +10,7 @@ module.exports = function verifyJWT(req, res, next){
     jwt.verify(token, SECRET, function(err, decoded) {
         if (err) return res.status(500).json({ auth: false, message: 'Falha ao autenticar token.' });
 
-        req.user_email = decoded.id;
+        req.user_email = decoded.email;
         next();
     });
 };

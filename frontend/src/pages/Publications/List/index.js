@@ -1,8 +1,21 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import api from '../../../services/api';
 import './style.css';
 
 export default function ListPublication(){
+    const [publications,  setPublications] = useState([]);
+
+    const token = localStorage.getItem('token');
+
+    useEffect(() => {
+        api.get('publications/', {
+            headers: {
+                'x-acess-token': token,
+            }
+        })
+            .then(response => setPublications(response.data))
+            .catch(err => alert("Erro ao receber publicações"))
+    }, []);
 
     return (
         <div className="listMarket">
@@ -13,11 +26,11 @@ export default function ListPublication(){
             </div>
 
             <div className="content">
-            <section className="dados">
-                <p>Doação de R$ 150,00 direcionada para o lar de idosos
-                    de Cajazeiras-PB.</p>
-                    <p><darker>Data:</darker>27/06/2020</p>
-            </section>
+                {publications.map(publication => (
+                    <section className="dados">
+                        <p>{publication.description}</p>
+                    </section>
+                ))}
             </div>
 
         </div>

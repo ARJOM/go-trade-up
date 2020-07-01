@@ -3,13 +3,24 @@ import api from '../../../services/api';
 import './styles.css';
 
 export default function CreatePublication(){
-    const [ descricao, setDescricao ] = useState();
+    const [ descricao, setDescricao ] = useState("");
 
+    const token = localStorage.getItem('token');
 
-    async function handleSubmit(){
+    async function handleSubmit(e){
+        e.preventDefault();
+
         const data = {
             description: descricao
-        }
+        };
+
+        api.post('/publications', data, {
+            headers: {
+                'x-access-token': token,
+            }
+        })
+            .then(response => console.log(response))
+            .catch(err => {alert("Erro ao cadastrar"); console.log(err)})
     }
 
     return (
@@ -25,7 +36,7 @@ export default function CreatePublication(){
                     <section className="inpute">
                         <label className="Descricao">
                             <span>Descrição:</span>
-                            <textarea className="textAreaa" type="text" className="nbreak" value={descricao} onChange={text=>setDescricao(text.target.value)}/>
+                            <textarea className="textAreaa" value={descricao} onChange={text=>setDescricao(text.target.value)}/>
                         </label>
                         <button onClick={handleSubmit} className="btn-concluir">
                             PUBLICAR
