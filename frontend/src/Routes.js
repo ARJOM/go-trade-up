@@ -21,8 +21,8 @@ import ListPublication from "./pages/Publications/List";
 // Product
 import CreateProduct from "./pages/Products/Create";
 import EditProduct from "./pages/Products/Update";
-import ListProducts from "./pages/Products/ListByMarket";
-import ListMarketProducts from "./pages/Products/List";
+import ListProducts from "./pages/Products/List";
+import ListMarketProducts from "./pages/Products/ListByMarket";
 
 // Home
 import Home from "./pages/Home";
